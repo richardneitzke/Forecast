@@ -1,4 +1,4 @@
-<div align="center"><img src ="http://i.imgur.com/hn7YyWh.png?1" /> <br> <br> <h1>Forecast for iOS </h1> <h3> A small Swift 2.0 Weather App </h3></div>
+<div align="center"><img src ="http://i.imgur.com/hn7YyWh.png?1" /> <br> <br> <h1>Forecast for iOS </h1> <h3> A small Swift Weather App </h3></div>
 
 <div align="center">
 
