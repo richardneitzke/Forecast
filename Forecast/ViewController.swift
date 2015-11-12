@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         
-        let color1 = UIColor(red: 0.165, green: 0.804, blue: 0.529, alpha: 1).CGColor as CGColorRef
-        let color2 = UIColor(red: 0.165, green: 0.647, blue: 0.459, alpha: 1).CGColor as CGColorRef
+        let color1 = UIColor(red: 1, green: 1, blue: 1, alpha: 0).CGColor as CGColorRef
+        let color2 = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).CGColor as CGColorRef
         gradientLayer.colors = [color1, color2]
         
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
@@ -60,6 +60,8 @@ class ViewController: UIViewController {
             day.iconLabel.text = wtr.iconChar
             day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
         }
+        
+        self.view.backgroundColor = weatherConditions[0].color
         
         print("Successfully filled UI with delegated Data!")
         

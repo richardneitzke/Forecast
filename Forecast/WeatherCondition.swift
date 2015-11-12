@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class WeatherCondition {
     
@@ -14,6 +15,7 @@ class WeatherCondition {
     var unit:String
     var iconChar:String
     var day:String
+    var color:UIColor
     
     //Buils a WeatherCondition from certain API-Data
     init(degrees:Double,units:String,icon:String,time:String) {
@@ -56,6 +58,21 @@ class WeatherCondition {
         default: self.day = "ERR"
         }
 
+        var tempCelsius = degrees
+        if unit == "°F" { tempCelsius = (degrees-32)/(9/5) }
+        
+        switch tempCelsius {
+        case (35)...(300): color = UIColor(hue: 10.0/360.0, saturation: 0.74, brightness: 1, alpha: 1)
+        case (30)...(35): color = UIColor(hue: 26.0/360.0, saturation: 0.74, brightness: 1, alpha: 1)
+        case (20)...(30): color = UIColor(hue: 47.0/360.0, saturation: 0.74, brightness: 1, alpha: 1)
+        case (15)...(20): color = UIColor(hue: 144.0/360.0, saturation: 0.70, brightness: 0.71, alpha: 1)
+        case (5)...(15): color = UIColor(hue: 180.0/360.0, saturation: 0.65, brightness: 0.74, alpha: 1)
+        case (-5)...(5): color = UIColor(hue: 190.0/360.0, saturation: 0.84, brightness: 0.76, alpha: 1)
+        default: color = UIColor.blackColor()
+        }
+        }
+        
+        
     }
     
-}
+    
