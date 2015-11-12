@@ -38,7 +38,7 @@ Forecast uses the [forecast.io](https://forecast.io) API for weather data. The T
 
 ### Notes by Developer
 
-In case you want to improve this app, feel free to create an issues or a Pull Requests.
+In case you want to improve this app, feel free to create an issues or a Pull Request.
 Right now, I use some bad practices (for example bad callback handling), I'll try to fix most of that in the next couple of days.
 
 ### Build Notes
