@@ -35,6 +35,7 @@ class APIManager {
                 let lon = location!.coordinate.longitude
                 
                 //Requesting Server for Data
+                //Register at developer.forecast.io for your own API-Key. Please don't use this key if you're using this code.
                 Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)").responseJSON(completionHandler: {response in
                     
                     //Checking for successful Result
