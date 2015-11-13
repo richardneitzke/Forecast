@@ -324,7 +324,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eaA-4k-hso">
-                        <barButtonItem key="leftBarButtonItem" title="i" image="info_empty" id="4tm-K3-lma">
+                        <barButtonItem key="leftBarButtonItem" image="info_empty" id="4tm-K3-lma">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Ygd-wQ-8CK" kind="show" id="GHb-Hs-jxP"/>

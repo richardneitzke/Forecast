@@ -47,6 +47,7 @@ To build this project sucessfully, please just add Alamofire and SwifityJSON pod
 
     pod 'Alamofire', '~> 3.0'
     pod ‘SwiftyJSON’
+    pod 'SwiftOverlays', '~> 1.0'
 
 ### License
 This project is licensed under the MIT License, see [here](https://opensource.org/licenses/MIT) for more information.

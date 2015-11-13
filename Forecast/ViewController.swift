@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftOverlays
 
 class ViewController: UIViewController {
 
@@ -21,11 +21,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var day5: WeatherConditionView!
     
     @IBAction func refreshPressed(sender: UIBarButtonItem) {
-        apiManager.fetchForecast(self)
         
+        apiManager.fetchForecast(self)
+        self.showWaitOverlayWithText("Refreshing...")
     }
     
     override func viewDidLoad() {
+        
+        self.showWaitOverlayWithText("Refreshing...")
         apiManager.fetchForecast(self)
         
         //Inserts Background Gradient
@@ -49,6 +52,19 @@ class ViewController: UIViewController {
     //Fills the UI with Data from a [WeatherCondition]
     func showData(weatherConditions:[WeatherCondition]) {
         print("Reloading UI...")
+        
+        self.removeAllOverlays()
+        
+        //Shows error message in case someting went wrong
+        if weatherConditions.isEmpty {
+            let alert = UIAlertController(title: "Error while refreshing Data", message: "Please check your Internet Connection and Location Settings.", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Reload", style: .Cancel, handler: { aa in
+                self.showWaitOverlayWithText("Refreshing...")
+                self.apiManager.fetchForecast(self) }))
+            alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
         
         let days = [day0, day1, day2, day3, day4, day5]
         

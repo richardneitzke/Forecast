@@ -69,6 +69,7 @@ class APIManager {
                     } else {
                         print("Error while requesting weather data:")
                         print(response.result.error?.localizedDescription)
+                        self.delegate!.showData([WeatherCondition]())
                     }
                     
                 })
@@ -77,6 +78,7 @@ class APIManager {
             } else if error != nil {
                 print("Error while fetching location:")
                 print(error!.localizedDescription)
+                self.delegate!.showData([WeatherCondition]())
             }
             self.locationManager = nil
         }
