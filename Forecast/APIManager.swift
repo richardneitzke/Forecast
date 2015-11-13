@@ -14,10 +14,10 @@ import Alamofire
 class APIManager {
     
     var locationManager: OneShotLocationManager?
-    var delegate: ViewController?
+    var delegate: WeatherViewController?
     
     //Tries to fetch the Forecast for 5 days from forecast.io
-    func fetchForecast(delegate:ViewController) {
+    func fetchForecast(delegate: WeatherViewController) {
         
         self.delegate = delegate
         

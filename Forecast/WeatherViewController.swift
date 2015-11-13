@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     let apiManager = APIManager()
     
@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         apiManager.fetchForecast(self)
         
+        setNeedsStatusBarAppearanceUpdate()
+        
         //Inserts Background Gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -43,6 +45,7 @@ class ViewController: UIViewController {
         bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         bar.shadowImage = UIImage()
         bar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        bar.barStyle = .BlackTranslucent
     }
 
     

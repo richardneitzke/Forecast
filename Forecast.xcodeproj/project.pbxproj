@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279389BD1BF565B8000BEF25 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279389BC1BF565B8000BEF25 /* AboutViewController.swift */; };
 		315E23D8FF9AAA9B4BEE001C /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001034A2C372B9ABE4B3F461 /* Pods_Forecast.framework */; };
 		799CE5C41BF1389E00F8CDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C31BF1389E00F8CDCE /* AppDelegate.swift */; };
-		799CE5C61BF1389E00F8CDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C51BF1389E00F8CDCE /* ViewController.swift */; };
+		799CE5C61BF1389E00F8CDCE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C51BF1389E00F8CDCE /* WeatherViewController.swift */; };
 		799CE5C91BF1389E00F8CDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5C71BF1389E00F8CDCE /* Main.storyboard */; };
 		799CE5CB1BF1389E00F8CDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5CA1BF1389E00F8CDCE /* Assets.xcassets */; };
 		799CE5CE1BF1389E00F8CDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5CC1BF1389E00F8CDCE /* LaunchScreen.storyboard */; };
@@ -23,9 +24,10 @@
 /* Begin PBXFileReference section */
 		001034A2C372B9ABE4B3F461 /* Pods_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07997D2FFA80EF62B710E738 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
+		279389BC1BF565B8000BEF25 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		799CE5C01BF1389E00F8CDCE /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799CE5C31BF1389E00F8CDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		799CE5C51BF1389E00F8CDCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		799CE5C51BF1389E00F8CDCE /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		799CE5C81BF1389E00F8CDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		799CE5CA1BF1389E00F8CDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799CE5CD1BF1389E00F8CDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,7 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				799CE5C31BF1389E00F8CDCE /* AppDelegate.swift */,
-				799CE5C51BF1389E00F8CDCE /* ViewController.swift */,
+				799CE5C51BF1389E00F8CDCE /* WeatherViewController.swift */,
+				279389BC1BF565B8000BEF25 /* AboutViewController.swift */,
 				799CE5DB1BF142C800F8CDCE /* APIManager.swift */,
 				799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */,
 				799CE5D91BF13EA200F8CDCE /* OneShotLocationManager.swift */,
@@ -228,8 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				799CE5DC1BF142C800F8CDCE /* APIManager.swift in Sources */,
-				799CE5C61BF1389E00F8CDCE /* ViewController.swift in Sources */,
+				799CE5C61BF1389E00F8CDCE /* WeatherViewController.swift in Sources */,
 				799CE5DA1BF13EA200F8CDCE /* OneShotLocationManager.swift in Sources */,
+				279389BD1BF565B8000BEF25 /* AboutViewController.swift in Sources */,
 				799CE5EA1BF173DA00F8CDCE /* WeatherConditionView.swift in Sources */,
 				799CE5C41BF1389E00F8CDCE /* AppDelegate.swift in Sources */,
 				799CE5DE1BF1437E00F8CDCE /* WeatherCondition.swift in Sources */,
