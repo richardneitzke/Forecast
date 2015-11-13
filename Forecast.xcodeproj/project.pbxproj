@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		279389BD1BF565B8000BEF25 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279389BC1BF565B8000BEF25 /* AboutViewController.swift */; };
-		315E23D8FF9AAA9B4BEE001C /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001034A2C372B9ABE4B3F461 /* Pods_Forecast.framework */; };
+		315E23D8FF9AAA9B4BEE001C /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001034A2C372B9ABE4B3F461 /* Pods_Forecast.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		799CE5C41BF1389E00F8CDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C31BF1389E00F8CDCE /* AppDelegate.swift */; };
 		799CE5C61BF1389E00F8CDCE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C51BF1389E00F8CDCE /* WeatherViewController.swift */; };
 		799CE5C91BF1389E00F8CDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5C71BF1389E00F8CDCE /* Main.storyboard */; };
