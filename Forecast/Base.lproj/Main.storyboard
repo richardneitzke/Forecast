@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gTC-MS-Ub9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gTC-MS-Ub9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,10 +28,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLn-hb-23x" userLabel="Day0" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="20" y="0.0" width="560" height="480"/>
+                                <rect key="frame" x="20" y="0.0" width="560" height="475"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG5-Ih-x6R">
-                                        <rect key="frame" x="169" y="35.5" width="221.5" height="289.5"/>
+                                        <rect key="frame" x="169" y="33" width="221.5" height="289.5"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="221.5" id="FCU-RU-1Vx"/>
@@ -42,7 +42,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
-                                        <rect key="frame" x="152" y="292" width="256" height="164"/>
+                                        <rect key="frame" x="152" y="289.5" width="256" height="164"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="256" id="Fgc-oI-Ggz"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="S3B-iZ-Lhr">
-                                <rect key="frame" x="8" y="480" width="584" height="110"/>
+                                <rect key="frame" x="20" y="475" width="560" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfK-AY-8bm" userLabel="Day1" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="110"/>
@@ -123,7 +123,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-tX-Zgk" userLabel="Day2" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="130" y="0.0" width="65" height="110"/>
+                                        <rect key="frame" x="124" y="0.0" width="65" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-du-Ail" userLabel="ICN">
                                                 <rect key="frame" x="0.0" y="29" width="65" height="51"/>
@@ -176,7 +176,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-Xw-epN" userLabel="Day3" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="259.5" y="0.0" width="65" height="110"/>
+                                        <rect key="frame" x="247.5" y="0.0" width="65" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cls-4Y-dkc" userLabel="ICN">
                                                 <rect key="frame" x="0.0" y="29" width="65" height="51"/>
@@ -229,7 +229,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-y8-mGx" userLabel="Day4" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="389.5" y="0.0" width="65" height="110"/>
+                                        <rect key="frame" x="371.5" y="0.0" width="65" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-N4-uPb" userLabel="ICN">
                                                 <rect key="frame" x="0.0" y="29" width="65" height="51"/>
@@ -282,7 +282,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv0-md-eYf" userLabel="Day5" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="519" y="0.0" width="65" height="110"/>
+                                        <rect key="frame" x="495" y="0.0" width="65" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbU-9H-1fs" userLabel="ICN">
                                                 <rect key="frame" x="0.0" y="29" width="65" height="51"/>
@@ -351,13 +351,13 @@
                             <constraint firstItem="S3B-iZ-Lhr" firstAttribute="top" secondItem="yLn-hb-23x" secondAttribute="bottom" id="38m-TX-aOX"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4mh-eE-phb"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7R4-YG-VVu"/>
-                            <constraint firstItem="S3B-iZ-Lhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="9Tr-BU-h5p"/>
+                            <constraint firstItem="S3B-iZ-Lhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9Tr-BU-h5p"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UGa-iK-5Rk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yLn-hb-23x" secondAttribute="trailing" id="WpI-Wa-Uex"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cGH-Id-s8a"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hUs-GM-9PC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="S3B-iZ-Lhr" secondAttribute="trailing" constant="-12" id="wWK-6c-pyA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S3B-iZ-Lhr" secondAttribute="bottom" constant="10" id="zqD-Oj-94c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S3B-iZ-Lhr" secondAttribute="trailing" id="wWK-6c-pyA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S3B-iZ-Lhr" secondAttribute="bottom" constant="15" id="zqD-Oj-94c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eaA-4k-hso">
