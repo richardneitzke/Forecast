@@ -43,11 +43,10 @@ Right now, I use some bad practices (for example bad callback handling), I'll tr
 
 ### Build Notes
 
-To build this project sucessfully, please just add Alamofire and SwifityJSON pods. 
+To build this project sucessfully, please just install the Alamofire, SwifityJSON and pod SwiftOverlays pods by running 
 
-    pod 'Alamofire', '~> 3.0'
-    pod ‘SwiftyJSON’
-    pod 'SwiftOverlays', '~> 1.0'
+    pod install
+
 
 ### License
 This project is licensed under the MIT License, see [here](https://opensource.org/licenses/MIT) for more information.
