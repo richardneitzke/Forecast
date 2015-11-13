@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gTC-MS-Ub9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gTC-MS-Ub9">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,18 +28,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLn-hb-23x" userLabel="Day0" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="20" y="64" width="560" height="408.5"/>
+                                <rect key="frame" x="20" y="0.0" width="560" height="480"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oG5-Ih-x6R">
-                                        <rect key="frame" x="169" y="-25" width="221.5" height="289.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG5-Ih-x6R">
+                                        <rect key="frame" x="169" y="35.5" width="221.5" height="289.5"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="221.5" id="FCU-RU-1Vx"/>
+                                            <constraint firstAttribute="height" constant="289.5" id="PXB-8Q-vFK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="200"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
-                                        <rect key="frame" x="152" y="234" width="256" height="164"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
+                                        <rect key="frame" x="152" y="292" width="256" height="164"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="256" id="Fgc-oI-Ggz"/>
+                                            <constraint firstAttribute="height" constant="164" id="QRU-GN-2mY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="120"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -48,279 +55,309 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="2sj-fx-CU7"/>
-                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="KkN-Y5-Fhg"/>
-                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="top" secondItem="oG5-Ih-x6R" secondAttribute="bottom" constant="-30" id="eKR-h2-VRG"/>
-                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="top" secondItem="yLn-hb-23x" secondAttribute="top" constant="-25" id="lG9-j1-UcR"/>
-                                    <constraint firstAttribute="bottom" secondItem="I1Z-OA-hfc" secondAttribute="bottom" constant="10" id="zxC-Ly-KII"/>
+                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="CX8-fr-iFT"/>
+                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="-60" id="IJ5-Pz-9xF"/>
+                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="134" id="TAZ-5m-gyg"/>
+                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="n3V-nE-WmD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="degreeLabel" destination="I1Z-OA-hfc" id="VZi-GL-ejy"/>
                                     <outlet property="iconLabel" destination="oG5-Ih-x6R" id="JXE-GO-EgN"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfK-AY-8bm" userLabel="Day1" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="20" y="475" width="70" height="110"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="S3B-iZ-Lhr">
+                                <rect key="frame" x="8" y="480" width="584" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdD-GH-Npk">
-                                        <rect key="frame" x="16" y="29" width="39" height="51"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfK-AY-8bm" userLabel="Day1" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdD-GH-Npk">
+                                                <rect key="frame" x="0.0" y="29" width="65" height="51"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="D3T-SK-0NV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cS-4F-n3G" userLabel="ICN">
+                                                <rect key="frame" x="0.0" y="80" width="65" height="21.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21.5" id="Lhu-uX-2hk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-cM-lhU">
+                                                <rect key="frame" x="0.0" y="8" width="65" height="20.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.5" id="av5-4x-Wou"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cS-4F-n3G" userLabel="ICN">
-                                        <rect key="frame" x="17" y="80" width="35.5" height="21.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="6PW-Dp-ql9"/>
+                                            <constraint firstItem="5Ps-cM-lhU" firstAttribute="leading" secondItem="UfK-AY-8bm" secondAttribute="leading" id="7gv-p3-5k3"/>
+                                            <constraint firstAttribute="width" constant="65" id="9W1-E1-D75"/>
+                                            <constraint firstAttribute="trailing" secondItem="5cS-4F-n3G" secondAttribute="trailing" id="AIb-bi-fyL"/>
+                                            <constraint firstItem="cdD-GH-Npk" firstAttribute="top" secondItem="5Ps-cM-lhU" secondAttribute="bottom" constant="0.5" id="QQl-R9-P1v"/>
+                                            <constraint firstItem="cdD-GH-Npk" firstAttribute="leading" secondItem="UfK-AY-8bm" secondAttribute="leading" id="RDl-li-3KE"/>
+                                            <constraint firstAttribute="trailing" secondItem="cdD-GH-Npk" secondAttribute="trailing" id="coY-jc-DRH"/>
+                                            <constraint firstItem="5Ps-cM-lhU" firstAttribute="top" secondItem="UfK-AY-8bm" secondAttribute="top" constant="8" id="ej5-GY-Iuc"/>
+                                            <constraint firstItem="5cS-4F-n3G" firstAttribute="leading" secondItem="UfK-AY-8bm" secondAttribute="leading" id="sWk-PO-NIT"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Ps-cM-lhU" secondAttribute="trailing" id="wrk-IW-Ng7"/>
+                                            <constraint firstItem="5cS-4F-n3G" firstAttribute="top" secondItem="cdD-GH-Npk" secondAttribute="bottom" id="xOm-o0-rPf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="5Ps-cM-lhU" id="pvB-6L-hCY"/>
+                                            <outlet property="degreeLabel" destination="5cS-4F-n3G" id="ai1-NC-iER"/>
+                                            <outlet property="iconLabel" destination="cdD-GH-Npk" id="JY1-Zv-cmq"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-tX-Zgk" userLabel="Day2" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="0.0" width="65" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-du-Ail" userLabel="ICN">
+                                                <rect key="frame" x="0.0" y="29" width="65" height="51"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="AF0-jz-5jJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-Si-lri">
+                                                <rect key="frame" x="0.0" y="80" width="65" height="21.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21.5" id="y1k-Be-EWY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns9-xD-8lT">
+                                                <rect key="frame" x="0.0" y="8" width="65" height="20.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.5" id="ECk-vu-sqK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-cM-lhU">
-                                        <rect key="frame" x="19" y="8" width="31.5" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cD9-du-Ail" secondAttribute="trailing" id="Jlz-1T-mMU"/>
+                                            <constraint firstItem="cD9-du-Ail" firstAttribute="top" secondItem="Ns9-xD-8lT" secondAttribute="bottom" constant="0.5" id="LZO-sK-Ipw"/>
+                                            <constraint firstAttribute="height" constant="110" id="Pan-T6-fa8"/>
+                                            <constraint firstItem="Ns9-xD-8lT" firstAttribute="top" secondItem="9Hl-tX-Zgk" secondAttribute="top" constant="8" id="VQ4-JJ-Uek"/>
+                                            <constraint firstItem="fpf-Si-lri" firstAttribute="top" secondItem="cD9-du-Ail" secondAttribute="bottom" id="cUZ-8H-3TX"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ns9-xD-8lT" secondAttribute="trailing" id="eJd-ur-2Zb"/>
+                                            <constraint firstAttribute="trailing" secondItem="fpf-Si-lri" secondAttribute="trailing" id="g3q-64-6KE"/>
+                                            <constraint firstItem="fpf-Si-lri" firstAttribute="leading" secondItem="9Hl-tX-Zgk" secondAttribute="leading" id="pcm-i2-g8e"/>
+                                            <constraint firstItem="Ns9-xD-8lT" firstAttribute="leading" secondItem="9Hl-tX-Zgk" secondAttribute="leading" id="rL2-6I-Ju3"/>
+                                            <constraint firstItem="cD9-du-Ail" firstAttribute="leading" secondItem="9Hl-tX-Zgk" secondAttribute="leading" id="ueC-AL-6Kb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="Ns9-xD-8lT" id="CqB-p7-OwS"/>
+                                            <outlet property="degreeLabel" destination="fpf-Si-lri" id="eDG-5H-jSg"/>
+                                            <outlet property="iconLabel" destination="cD9-du-Ail" id="mpw-ux-VJL"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-Xw-epN" userLabel="Day3" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="259.5" y="0.0" width="65" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cls-4Y-dkc" userLabel="ICN">
+                                                <rect key="frame" x="0.0" y="29" width="65" height="51"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="mRJ-g9-b2Q"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpd-8Z-XsX">
+                                                <rect key="frame" x="0.0" y="80" width="65" height="21.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21.5" id="PIi-VR-nss"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bts-QX-xFh">
+                                                <rect key="frame" x="0.0" y="8" width="65" height="20.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.5" id="Y8V-nh-T5H"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <constraints>
+                                            <constraint firstItem="cls-4Y-dkc" firstAttribute="leading" secondItem="T8X-Xw-epN" secondAttribute="leading" id="6HM-hn-9cK"/>
+                                            <constraint firstItem="cls-4Y-dkc" firstAttribute="top" secondItem="bts-QX-xFh" secondAttribute="bottom" constant="0.5" id="AKw-Wc-tgz"/>
+                                            <constraint firstItem="bts-QX-xFh" firstAttribute="leading" secondItem="T8X-Xw-epN" secondAttribute="leading" id="Bdy-IB-Cjq"/>
+                                            <constraint firstItem="Kpd-8Z-XsX" firstAttribute="top" secondItem="cls-4Y-dkc" secondAttribute="bottom" id="FZD-dm-fQb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kpd-8Z-XsX" secondAttribute="trailing" id="Keo-sC-t7q"/>
+                                            <constraint firstAttribute="trailing" secondItem="bts-QX-xFh" secondAttribute="trailing" id="Qqu-3r-mSL"/>
+                                            <constraint firstItem="Kpd-8Z-XsX" firstAttribute="leading" secondItem="T8X-Xw-epN" secondAttribute="leading" id="ReC-fM-Lda"/>
+                                            <constraint firstAttribute="height" constant="110" id="Zg6-th-CWN"/>
+                                            <constraint firstAttribute="trailing" secondItem="cls-4Y-dkc" secondAttribute="trailing" id="ut6-vt-Qtj"/>
+                                            <constraint firstItem="bts-QX-xFh" firstAttribute="top" secondItem="T8X-Xw-epN" secondAttribute="top" constant="8" id="vsv-S5-Kl6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="bts-QX-xFh" id="PDw-uv-YYs"/>
+                                            <outlet property="degreeLabel" destination="Kpd-8Z-XsX" id="P3z-5T-u4n"/>
+                                            <outlet property="iconLabel" destination="cls-4Y-dkc" id="NWk-gc-suX"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-y8-mGx" userLabel="Day4" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="389.5" y="0.0" width="65" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-N4-uPb" userLabel="ICN">
+                                                <rect key="frame" x="0.0" y="29" width="65" height="51"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="j9t-je-RoP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-PA-Z1Y">
+                                                <rect key="frame" x="0.0" y="80" width="65" height="21.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21.5" id="KAX-BU-Oou"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXl-zM-tHe">
+                                                <rect key="frame" x="0.0" y="8" width="65" height="20.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.5" id="Rg7-Tv-dFQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aXl-zM-tHe" secondAttribute="trailing" id="2d5-xz-NQ6"/>
+                                            <constraint firstItem="dFq-PA-Z1Y" firstAttribute="top" secondItem="O0C-N4-uPb" secondAttribute="bottom" id="5dU-ve-hOI"/>
+                                            <constraint firstItem="dFq-PA-Z1Y" firstAttribute="leading" secondItem="ebh-y8-mGx" secondAttribute="leading" id="AUE-Rg-2cs"/>
+                                            <constraint firstAttribute="trailing" secondItem="dFq-PA-Z1Y" secondAttribute="trailing" id="Ee7-bm-oy3"/>
+                                            <constraint firstItem="O0C-N4-uPb" firstAttribute="leading" secondItem="ebh-y8-mGx" secondAttribute="leading" id="JsO-hx-FPp"/>
+                                            <constraint firstAttribute="height" constant="110" id="P1i-NY-JyS"/>
+                                            <constraint firstItem="aXl-zM-tHe" firstAttribute="leading" secondItem="ebh-y8-mGx" secondAttribute="leading" id="PIA-7b-q1N"/>
+                                            <constraint firstItem="aXl-zM-tHe" firstAttribute="top" secondItem="ebh-y8-mGx" secondAttribute="top" constant="8" id="hey-fn-E19"/>
+                                            <constraint firstItem="O0C-N4-uPb" firstAttribute="top" secondItem="aXl-zM-tHe" secondAttribute="bottom" constant="0.5" id="l9w-Rf-7wf"/>
+                                            <constraint firstAttribute="trailing" secondItem="O0C-N4-uPb" secondAttribute="trailing" id="sc0-VQ-DXo"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="aXl-zM-tHe" id="V9D-Gk-FV6"/>
+                                            <outlet property="degreeLabel" destination="dFq-PA-Z1Y" id="KDe-6N-V3S"/>
+                                            <outlet property="iconLabel" destination="O0C-N4-uPb" id="I6p-lX-03O"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv0-md-eYf" userLabel="Day5" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="519" y="0.0" width="65" height="110"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbU-9H-1fs" userLabel="ICN">
+                                                <rect key="frame" x="0.0" y="29" width="65" height="51"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="OMB-1E-yA3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93V-MA-kvt">
+                                                <rect key="frame" x="0.0" y="80" width="65" height="21.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21.5" id="bau-o0-1fC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUU-RN-PB5">
+                                                <rect key="frame" x="0.0" y="8" width="65" height="20.5"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.5" id="XUt-hh-k8K"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="93V-MA-kvt" secondAttribute="trailing" id="1eP-eC-NMa"/>
+                                            <constraint firstItem="93V-MA-kvt" firstAttribute="top" secondItem="lbU-9H-1fs" secondAttribute="bottom" id="250-Cs-ysh"/>
+                                            <constraint firstAttribute="height" constant="110" id="7Sq-ga-Nsu"/>
+                                            <constraint firstItem="bUU-RN-PB5" firstAttribute="leading" secondItem="Vv0-md-eYf" secondAttribute="leading" id="Adp-No-mWw"/>
+                                            <constraint firstItem="bUU-RN-PB5" firstAttribute="top" secondItem="Vv0-md-eYf" secondAttribute="top" constant="8" id="IVW-PW-u0r"/>
+                                            <constraint firstAttribute="trailing" secondItem="bUU-RN-PB5" secondAttribute="trailing" id="KNg-3u-yWf"/>
+                                            <constraint firstItem="lbU-9H-1fs" firstAttribute="leading" secondItem="Vv0-md-eYf" secondAttribute="leading" id="i1h-Iv-oR0"/>
+                                            <constraint firstAttribute="trailing" secondItem="lbU-9H-1fs" secondAttribute="trailing" id="luP-wb-JGX"/>
+                                            <constraint firstItem="lbU-9H-1fs" firstAttribute="top" secondItem="bUU-RN-PB5" secondAttribute="bottom" constant="0.5" id="ugZ-bO-ap2"/>
+                                            <constraint firstItem="93V-MA-kvt" firstAttribute="leading" secondItem="Vv0-md-eYf" secondAttribute="leading" id="vca-Sy-sAu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="bUU-RN-PB5" id="vTe-tw-2xI"/>
+                                            <outlet property="degreeLabel" destination="93V-MA-kvt" id="w9I-nJ-FdV"/>
+                                            <outlet property="iconLabel" destination="lbU-9H-1fs" id="8gc-Wn-u6r"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="J1J-dy-fHz"/>
-                                    <constraint firstItem="5Ps-cM-lhU" firstAttribute="top" secondItem="UfK-AY-8bm" secondAttribute="top" constant="8" id="JCP-uV-a01"/>
-                                    <constraint firstAttribute="height" constant="110" id="OX4-R4-zY0"/>
-                                    <constraint firstItem="cdD-GH-Npk" firstAttribute="centerY" secondItem="UfK-AY-8bm" secondAttribute="centerY" id="WHi-Cn-KbV"/>
-                                    <constraint firstItem="cdD-GH-Npk" firstAttribute="centerX" secondItem="UfK-AY-8bm" secondAttribute="centerX" id="ic1-Lu-ME0"/>
-                                    <constraint firstItem="5Ps-cM-lhU" firstAttribute="centerX" secondItem="UfK-AY-8bm" secondAttribute="centerX" id="jhw-pN-a1o"/>
-                                    <constraint firstItem="5cS-4F-n3G" firstAttribute="centerX" secondItem="UfK-AY-8bm" secondAttribute="centerX" id="jy1-JG-yzM"/>
-                                    <constraint firstAttribute="bottom" secondItem="5cS-4F-n3G" secondAttribute="bottom" constant="8" id="m67-dx-ppw"/>
+                                    <constraint firstItem="ebh-y8-mGx" firstAttribute="width" secondItem="UfK-AY-8bm" secondAttribute="width" id="6zm-hb-Hkr"/>
+                                    <constraint firstItem="9Hl-tX-Zgk" firstAttribute="width" secondItem="UfK-AY-8bm" secondAttribute="width" id="Kj5-Un-W6p"/>
+                                    <constraint firstItem="Vv0-md-eYf" firstAttribute="width" secondItem="UfK-AY-8bm" secondAttribute="width" id="Xqu-Dy-99E"/>
+                                    <constraint firstAttribute="height" constant="110" id="c5Z-zH-h8q"/>
+                                    <constraint firstItem="T8X-Xw-epN" firstAttribute="width" secondItem="UfK-AY-8bm" secondAttribute="width" id="x0F-ie-s2l"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="dayLabel" destination="5Ps-cM-lhU" id="pvB-6L-hCY"/>
-                                    <outlet property="degreeLabel" destination="5cS-4F-n3G" id="ai1-NC-iER"/>
-                                    <outlet property="iconLabel" destination="cdD-GH-Npk" id="JY1-Zv-cmq"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFq-ba-iMQ" userLabel="Spacer">
-                                <rect key="frame" x="90" y="475" width="52" height="117"/>
-                                <animations/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-tX-Zgk" userLabel="Day2" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="142" y="475" width="70.5" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-du-Ail" userLabel="ICN">
-                                        <rect key="frame" x="16" y="29" width="39" height="51"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-Si-lri">
-                                        <rect key="frame" x="17" y="80" width="35.5" height="21.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns9-xD-8lT">
-                                        <rect key="frame" x="19" y="8" width="31.5" height="20.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="Ns9-xD-8lT" firstAttribute="centerX" secondItem="9Hl-tX-Zgk" secondAttribute="centerX" id="0Ub-nd-hx2"/>
-                                    <constraint firstAttribute="height" constant="110" id="3kJ-5x-NPL"/>
-                                    <constraint firstItem="cD9-du-Ail" firstAttribute="centerY" secondItem="9Hl-tX-Zgk" secondAttribute="centerY" id="AY5-gG-gS5"/>
-                                    <constraint firstAttribute="bottom" secondItem="fpf-Si-lri" secondAttribute="bottom" constant="8" id="G4e-WK-lA8"/>
-                                    <constraint firstItem="Ns9-xD-8lT" firstAttribute="top" secondItem="9Hl-tX-Zgk" secondAttribute="top" constant="8" id="M6y-pS-8iX"/>
-                                    <constraint firstItem="fpf-Si-lri" firstAttribute="centerX" secondItem="9Hl-tX-Zgk" secondAttribute="centerX" id="U1p-fp-6Sm"/>
-                                    <constraint firstAttribute="width" constant="70" id="gcn-6F-V2L"/>
-                                    <constraint firstItem="cD9-du-Ail" firstAttribute="centerX" secondItem="9Hl-tX-Zgk" secondAttribute="centerX" id="sdj-F1-pR7"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dayLabel" destination="Ns9-xD-8lT" id="CqB-p7-OwS"/>
-                                    <outlet property="degreeLabel" destination="fpf-Si-lri" id="eDG-5H-jSg"/>
-                                    <outlet property="iconLabel" destination="cD9-du-Ail" id="mpw-ux-VJL"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-Ze-4c0" userLabel="Spacer">
-                                <rect key="frame" x="213" y="475" width="52" height="117"/>
-                                <animations/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-Xw-epN" userLabel="Day3" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="265" y="475" width="70" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cls-4Y-dkc" userLabel="ICN">
-                                        <rect key="frame" x="16" y="29" width="39" height="51"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpd-8Z-XsX">
-                                        <rect key="frame" x="17" y="80" width="35.5" height="21.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bts-QX-xFh">
-                                        <rect key="frame" x="19" y="8" width="31.5" height="20.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="cls-4Y-dkc" firstAttribute="centerX" secondItem="T8X-Xw-epN" secondAttribute="centerX" id="4nN-v4-6h0"/>
-                                    <constraint firstItem="bts-QX-xFh" firstAttribute="centerX" secondItem="T8X-Xw-epN" secondAttribute="centerX" id="5ib-cK-lvK"/>
-                                    <constraint firstItem="bts-QX-xFh" firstAttribute="top" secondItem="T8X-Xw-epN" secondAttribute="top" constant="8" id="9MB-zc-Pbv"/>
-                                    <constraint firstAttribute="width" constant="70" id="Ibp-gM-bs7"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kpd-8Z-XsX" secondAttribute="bottom" constant="8" id="Qi9-QF-H2h"/>
-                                    <constraint firstItem="cls-4Y-dkc" firstAttribute="centerY" secondItem="T8X-Xw-epN" secondAttribute="centerY" id="S6B-wO-u2y"/>
-                                    <constraint firstAttribute="height" constant="110" id="Yb6-DL-k8f"/>
-                                    <constraint firstItem="Kpd-8Z-XsX" firstAttribute="centerX" secondItem="T8X-Xw-epN" secondAttribute="centerX" id="xPv-od-91e"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dayLabel" destination="bts-QX-xFh" id="PDw-uv-YYs"/>
-                                    <outlet property="degreeLabel" destination="Kpd-8Z-XsX" id="P3z-5T-u4n"/>
-                                    <outlet property="iconLabel" destination="cls-4Y-dkc" id="NWk-gc-suX"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYv-9s-TFG" userLabel="Spacer">
-                                <rect key="frame" x="335" y="475" width="52.5" height="117"/>
-                                <animations/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-y8-mGx" userLabel="Day4" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="388" y="475" width="70" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-N4-uPb" userLabel="ICN">
-                                        <rect key="frame" x="15" y="29" width="39" height="51"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-PA-Z1Y">
-                                        <rect key="frame" x="17" y="80" width="35.5" height="21.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXl-zM-tHe">
-                                        <rect key="frame" x="19" y="8" width="31.5" height="20.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="dFq-PA-Z1Y" firstAttribute="centerX" secondItem="ebh-y8-mGx" secondAttribute="centerX" id="5JD-aa-LVG"/>
-                                    <constraint firstItem="aXl-zM-tHe" firstAttribute="top" secondItem="ebh-y8-mGx" secondAttribute="top" constant="8" id="65w-5Q-eZk"/>
-                                    <constraint firstItem="O0C-N4-uPb" firstAttribute="centerX" secondItem="ebh-y8-mGx" secondAttribute="centerX" id="BLi-lK-Hxb"/>
-                                    <constraint firstAttribute="width" constant="70" id="Cdf-rm-o5Z"/>
-                                    <constraint firstAttribute="height" constant="110" id="Q3n-yk-zH6"/>
-                                    <constraint firstItem="aXl-zM-tHe" firstAttribute="centerX" secondItem="ebh-y8-mGx" secondAttribute="centerX" id="Whm-Ae-dEH"/>
-                                    <constraint firstItem="O0C-N4-uPb" firstAttribute="centerY" secondItem="ebh-y8-mGx" secondAttribute="centerY" id="cx5-TL-Waz"/>
-                                    <constraint firstAttribute="bottom" secondItem="dFq-PA-Z1Y" secondAttribute="bottom" constant="8" id="su1-Mr-sDq"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dayLabel" destination="aXl-zM-tHe" id="V9D-Gk-FV6"/>
-                                    <outlet property="degreeLabel" destination="dFq-PA-Z1Y" id="KDe-6N-V3S"/>
-                                    <outlet property="iconLabel" destination="O0C-N4-uPb" id="I6p-lX-03O"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUv-i6-X3i" userLabel="Spacer">
-                                <rect key="frame" x="458" y="475" width="52" height="117"/>
-                                <animations/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv0-md-eYf" userLabel="Day5" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                <rect key="frame" x="510" y="475" width="70" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbU-9H-1fs" userLabel="ICN">
-                                        <rect key="frame" x="16" y="29" width="39" height="51"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93V-MA-kvt">
-                                        <rect key="frame" x="17" y="80" width="35.5" height="21.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUU-RN-PB5">
-                                        <rect key="frame" x="19" y="8" width="31.5" height="20.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="bUU-RN-PB5" firstAttribute="top" secondItem="Vv0-md-eYf" secondAttribute="top" constant="8" id="0kc-U3-Lnc"/>
-                                    <constraint firstAttribute="width" constant="70" id="4sD-De-e4P"/>
-                                    <constraint firstAttribute="height" constant="110" id="Xa0-kD-FfO"/>
-                                    <constraint firstItem="93V-MA-kvt" firstAttribute="centerX" secondItem="Vv0-md-eYf" secondAttribute="centerX" id="pIb-y8-if4"/>
-                                    <constraint firstAttribute="bottom" secondItem="93V-MA-kvt" secondAttribute="bottom" constant="8" id="r3H-wU-jt5"/>
-                                    <constraint firstItem="lbU-9H-1fs" firstAttribute="centerX" secondItem="Vv0-md-eYf" secondAttribute="centerX" id="tQo-K2-tx2"/>
-                                    <constraint firstItem="lbU-9H-1fs" firstAttribute="centerY" secondItem="Vv0-md-eYf" secondAttribute="centerY" id="tdA-lQ-7G3"/>
-                                    <constraint firstItem="bUU-RN-PB5" firstAttribute="centerX" secondItem="Vv0-md-eYf" secondAttribute="centerX" id="wqh-U7-1Gb"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dayLabel" destination="bUU-RN-PB5" id="vTe-tw-2xI"/>
-                                    <outlet property="degreeLabel" destination="93V-MA-kvt" id="w9I-nJ-FdV"/>
-                                    <outlet property="iconLabel" destination="lbU-9H-1fs" id="8gc-Wn-u6r"/>
-                                </connections>
-                            </view>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.70980392156862748" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yLn-hb-23x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2Rt-7s-Kut"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cWJ-Ze-4c0" secondAttribute="bottom" constant="8" id="4Je-iL-ZFN"/>
-                            <constraint firstItem="wYv-9s-TFG" firstAttribute="width" secondItem="cWJ-Ze-4c0" secondAttribute="width" id="4ZK-XB-i04"/>
+                            <constraint firstItem="S3B-iZ-Lhr" firstAttribute="top" secondItem="yLn-hb-23x" secondAttribute="bottom" id="38m-TX-aOX"/>
+                            <constraint firstItem="yLn-hb-23x" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4mh-eE-phb"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7R4-YG-VVu"/>
-                            <constraint firstItem="wYv-9s-TFG" firstAttribute="height" secondItem="cWJ-Ze-4c0" secondAttribute="height" id="7dc-3D-Eij"/>
-                            <constraint firstItem="fUv-i6-X3i" firstAttribute="width" secondItem="wYv-9s-TFG" secondAttribute="width" id="BaN-wC-l30"/>
-                            <constraint firstItem="cWJ-Ze-4c0" firstAttribute="width" secondItem="SFq-ba-iMQ" secondAttribute="width" id="HoC-8w-kfx"/>
-                            <constraint firstItem="SFq-ba-iMQ" firstAttribute="top" secondItem="UfK-AY-8bm" secondAttribute="top" id="IGn-Zj-M1I"/>
-                            <constraint firstItem="Vv0-md-eYf" firstAttribute="top" secondItem="fUv-i6-X3i" secondAttribute="top" id="InW-9D-FFS"/>
-                            <constraint firstItem="cWJ-Ze-4c0" firstAttribute="leading" secondItem="9Hl-tX-Zgk" secondAttribute="trailing" id="NAM-Ce-Otd"/>
-                            <constraint firstItem="fUv-i6-X3i" firstAttribute="top" secondItem="ebh-y8-mGx" secondAttribute="top" id="NLM-5P-c3h"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wYv-9s-TFG" secondAttribute="bottom" constant="8" id="QPJ-GC-XBg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fUv-i6-X3i" secondAttribute="bottom" constant="8" id="SHF-au-Cuf"/>
-                            <constraint firstItem="cWJ-Ze-4c0" firstAttribute="top" secondItem="9Hl-tX-Zgk" secondAttribute="top" id="SiP-xE-OAI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vv0-md-eYf" secondAttribute="bottom" constant="15" id="TWq-aP-6LL"/>
-                            <constraint firstItem="cWJ-Ze-4c0" firstAttribute="height" secondItem="SFq-ba-iMQ" secondAttribute="height" id="WRG-xj-DHa"/>
+                            <constraint firstItem="S3B-iZ-Lhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="9Tr-BU-h5p"/>
+                            <constraint firstItem="yLn-hb-23x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UGa-iK-5Rk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yLn-hb-23x" secondAttribute="trailing" id="WpI-Wa-Uex"/>
-                            <constraint firstItem="fUv-i6-X3i" firstAttribute="leading" secondItem="ebh-y8-mGx" secondAttribute="trailing" id="bbP-cJ-aBf"/>
-                            <constraint firstItem="ebh-y8-mGx" firstAttribute="leading" secondItem="wYv-9s-TFG" secondAttribute="trailing" id="bzH-c5-oct"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UfK-AY-8bm" secondAttribute="bottom" constant="15" id="dLV-xt-jh2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vv0-md-eYf" secondAttribute="trailing" id="dVP-FE-5eq"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SFq-ba-iMQ" secondAttribute="bottom" constant="8" id="fcz-NV-ecM"/>
-                            <constraint firstItem="Vv0-md-eYf" firstAttribute="leading" secondItem="fUv-i6-X3i" secondAttribute="trailing" id="g59-Rx-mYh"/>
-                            <constraint firstItem="wYv-9s-TFG" firstAttribute="leading" secondItem="T8X-Xw-epN" secondAttribute="trailing" id="gRm-dv-u50"/>
+                            <constraint firstItem="yLn-hb-23x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cGH-Id-s8a"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hUs-GM-9PC"/>
-                            <constraint firstItem="9Hl-tX-Zgk" firstAttribute="leading" secondItem="SFq-ba-iMQ" secondAttribute="trailing" id="hVc-rn-54I"/>
-                            <constraint firstItem="UfK-AY-8bm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hvr-kT-osP"/>
-                            <constraint firstItem="SFq-ba-iMQ" firstAttribute="leading" secondItem="UfK-AY-8bm" secondAttribute="trailing" id="nGQ-zV-0Qp"/>
-                            <constraint firstItem="fUv-i6-X3i" firstAttribute="height" secondItem="wYv-9s-TFG" secondAttribute="height" id="oEm-yR-rsk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T8X-Xw-epN" secondAttribute="bottom" constant="15" id="uwT-LU-eF9"/>
-                            <constraint firstItem="T8X-Xw-epN" firstAttribute="leading" secondItem="cWJ-Ze-4c0" secondAttribute="trailing" id="wZA-Yk-hX4"/>
-                            <constraint firstItem="wYv-9s-TFG" firstAttribute="top" secondItem="T8X-Xw-epN" secondAttribute="top" id="xro-Ri-UhU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S3B-iZ-Lhr" secondAttribute="trailing" constant="-12" id="wWK-6c-pyA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S3B-iZ-Lhr" secondAttribute="bottom" constant="10" id="zqD-Oj-94c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eaA-4k-hso">
@@ -337,6 +374,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="day0" destination="yLn-hb-23x" id="Z1x-L9-GSB"/>
                         <outlet property="day1" destination="UfK-AY-8bm" id="DvO-NK-YUM"/>
@@ -380,7 +418,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Richard Neitzke" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aiL-hi-ceS">
@@ -408,7 +446,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="github.com/richardxyx" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ABW-TE-CBv">
@@ -440,7 +478,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="forecast.io" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8gf-cw-ZUh">
@@ -468,7 +506,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="OneShotLocationManager" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0kX-Sv-u4k">
@@ -496,7 +534,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="weathericons.io" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X7F-Tu-ivL">
@@ -524,7 +562,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="icons8.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pN1-e6-N2E">
