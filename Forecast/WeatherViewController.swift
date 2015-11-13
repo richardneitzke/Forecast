@@ -21,15 +21,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var day5: WeatherConditionView!
     
     @IBAction func refreshPressed(sender: UIBarButtonItem) {
-        
-        apiManager.fetchForecast(self)
-        self.showWaitOverlayWithText("Refreshing...")
+        refresh()
     }
     
     override func viewDidLoad() {
         
-        self.showWaitOverlayWithText("Refreshing...")
-        apiManager.fetchForecast(self)
+        refresh()
         
         setNeedsStatusBarAppearanceUpdate()
         
@@ -51,39 +48,54 @@ class WeatherViewController: UIViewController {
         bar.barStyle = .BlackTranslucent
     }
 
-    
-    //Fills the UI with Data from a [WeatherCondition]
-    func showData(weatherConditions:[WeatherCondition]) {
-        print("Reloading UI...")
+    //Refreshes the Data/UI
+    func refresh() {
         
-        self.removeAllOverlays()
-        
-        //Shows error message in case someting went wrong
-        if weatherConditions.isEmpty {
-            let alert = UIAlertController(title: "Error while refreshing Data", message: "Please check your Internet Connection and Location Settings.", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Reload", style: .Cancel, handler: { aa in
-                self.showWaitOverlayWithText("Refreshing...")
-                self.apiManager.fetchForecast(self) }))
-            alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-        }
-        
-        let days = [day0, day1, day2, day3, day4, day5]
-        
-        for i in 0...5 {
-            let day = days[i]
-            let wtr = weatherConditions[i]
+        //Callback for putting received Data in the UI
+        let refreshCallback: ([WeatherCondition]) -> Void = { weatherConditions in
             
-            if day.dayLabel != nil {day.dayLabel.text = wtr.day}
-            day.iconLabel.text = wtr.iconChar
-            day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
+            print("Trying to put received data in the UI...")
+            
+            self.removeAllOverlays()
+            
+            //Checks for empty array and shows error message in case someting went wrong
+            if weatherConditions.isEmpty {
+                print("The array is empty! Showing error alert...")
+                
+                let alert = UIAlertController(title: "Error while refreshing Data", message: "Please check your Internet Connection and Location Settings.", preferredStyle: .Alert)
+                
+                let reloadAction = UIAlertAction(title: "Reload", style: .Cancel, handler: { aa in self.refresh() })
+                let okayAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+                
+                alert.addAction(reloadAction)
+                alert.addAction(okayAction)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            
+            //Reads the [WeatherCondition] in the UI
+            let days = [self.day0, self.day1, self.day2, self.day3, self.day4, self.day5]
+            
+            for i in 0...5 {
+                let day = days[i]
+                let wtr = weatherConditions[i]
+                
+                if day.dayLabel != nil {day.dayLabel.text = wtr.day}
+                day.iconLabel.text = wtr.iconChar
+                day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
+            }
+            
+            self.view.backgroundColor = weatherConditions[0].color
+            
+            print("Successfully filled UI with refreshed Data!")
+
+            
         }
         
-        self.view.backgroundColor = weatherConditions[0].color
-        
-        print("Successfully filled UI with delegated Data!")
-        
+        //Calling the API-Manager for fresh Data
+        self.showWaitOverlayWithText("Refreshing...")
+        apiManager.fetchForecast({ weatherConditions in refreshCallback(weatherConditions)})
     }
 
 }

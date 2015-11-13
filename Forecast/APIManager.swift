@@ -14,12 +14,12 @@ import Alamofire
 class APIManager {
     
     var locationManager: OneShotLocationManager?
-    var delegate: WeatherViewController?
     
     //Tries to fetch the Forecast for 5 days from forecast.io
-    func fetchForecast(delegate: WeatherViewController) {
+    func fetchForecast(callback:([WeatherCondition])->()) {
         
-        self.delegate = delegate
+        //Empty [WeatherCondition] which is to be filled with data
+        var weatherConditions = [WeatherCondition]()
         
         print("Trying to locate phone...")
         
@@ -34,8 +34,9 @@ class APIManager {
                 let lat = location!.coordinate.latitude
                 let lon = location!.coordinate.longitude
                 
-                //Requesting Server for Data
-                //Register at developer.forecast.io for your own API-Key. Please don't use this key if you're using this code.
+                //Requesting Data from Server
+                //Register at developer.forecast.io for your own API-Key. Please don't use this key if you're using this code in your own project.
+                
                 Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)").responseJSON(completionHandler: {response in
                     
                     //Checking for successful Result
@@ -44,7 +45,6 @@ class APIManager {
                         print("Server responded! Compiling Raw Data to [CurrentWeatherData]...")
                         
                         let json = JSON(response.result.value!)
-                        var weatherConditions = [WeatherCondition]()
                         
                         let currDeg = json["currently"]["temperature"].doubleValue
                         let currUnt = json["flags"]["units"].stringValue
@@ -63,13 +63,13 @@ class APIManager {
                             weatherConditions.append(weather)
                         }
                         
-                        print("Success! Delegating Data to ViewController...")
-                        self.delegate!.showData(weatherConditions)
+                        print("Success! Calling back WeatherController with data...")
+                        callback(weatherConditions)
                         
                     } else {
                         print("Error while requesting weather data:")
                         print(response.result.error?.localizedDescription)
-                        self.delegate!.showData([WeatherCondition]())
+                        callback(weatherConditions)
                     }
                     
                 })
@@ -78,7 +78,8 @@ class APIManager {
             } else if error != nil {
                 print("Error while fetching location:")
                 print(error!.localizedDescription)
-                self.delegate!.showData([WeatherCondition]())
+                callback(weatherConditions)
+
             }
             self.locationManager = nil
         }
