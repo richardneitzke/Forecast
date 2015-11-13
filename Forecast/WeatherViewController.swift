@@ -9,7 +9,7 @@
 import UIKit
 import SwiftOverlays
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     let apiManager = APIManager()
     
@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         self.showWaitOverlayWithText("Refreshing...")
         apiManager.fetchForecast(self)
         
+        setNeedsStatusBarAppearanceUpdate()
+        
         //Inserts Background Gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
         bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         bar.shadowImage = UIImage()
         bar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        bar.barStyle = .BlackTranslucent
     }
 
     
