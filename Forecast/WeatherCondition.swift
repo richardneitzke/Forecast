@@ -17,7 +17,7 @@ class WeatherCondition {
     var day:String
     var color:UIColor
     
-    //Buils a WeatherCondition from certain API-Data
+    //Builds a WeatherCondition from certain API-Data
     init(degrees:Double,units:String,icon:String,time:String) {
         
         self.degrees = Int(degrees)

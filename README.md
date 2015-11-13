@@ -43,7 +43,7 @@ Right now, I use some bad practices (for example bad callback handling), I'll tr
 
 ### Build Notes
 
-To build this project sucessfully, please just install the Alamofire, SwifityJSON and pod SwiftOverlays pods by running 
+To build this project sucessfully, just install the rquired pods by running the following command: 
 
     pod install
 

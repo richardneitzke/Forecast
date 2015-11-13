@@ -15,7 +15,7 @@ class APIManager {
     
     var locationManager: OneShotLocationManager?
     
-    //Tries to fetch the Forecast for 5 days from forecast.io
+    //Tries to fetch the Forecast from forecast.io
     func fetchForecast(callback:([WeatherCondition])->()) {
         
         //Empty [WeatherCondition] which is to be filled with data
@@ -39,7 +39,7 @@ class APIManager {
                 
                 Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)").responseJSON(completionHandler: {response in
                     
-                    //Checking for successful Result
+                    //Checking for successful Response
                     if response.result.value != nil {
                         
                         print("Server responded! Compiling Raw Data to [CurrentWeatherData]...")
