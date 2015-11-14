@@ -31,7 +31,7 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="475"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG5-Ih-x6R">
-                                        <rect key="frame" x="169" y="33" width="222" height="290"/>
+                                        <rect key="frame" x="169" y="-55" width="222" height="290"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="221.5" id="FCU-RU-1Vx"/>
@@ -42,7 +42,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
-                                        <rect key="frame" x="152" y="290" width="256" height="164"/>
+                                        <rect key="frame" x="152" y="202" width="256" height="164"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="256" id="Fgc-oI-Ggz"/>
@@ -53,7 +53,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxm-1W-144" customClass="BEMSimpleLineGraphView">
-                                        <rect key="frame" x="35" y="305" width="491" height="133"/>
+                                        <rect key="frame" x="0.0" y="356" width="552" height="133"/>
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
@@ -99,15 +99,15 @@
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="top" secondItem="yLn-hb-23x" secondAttribute="top" constant="305" id="9n0-Jm-goO"/>
                                     <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="CX8-fr-iFT"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="bottom" secondItem="yLn-hb-23x" secondAttribute="bottomMargin" id="Gr8-oB-DHA"/>
-                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="-60" id="IJ5-Pz-9xF"/>
-                                    <constraint firstItem="Fxm-1W-144" firstAttribute="top" secondItem="oG5-Ih-x6R" secondAttribute="bottom" constant="-18" id="JtH-h1-1uc"/>
+                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="-147.5" id="IJ5-Pz-9xF"/>
+                                    <constraint firstItem="Fxm-1W-144" firstAttribute="top" secondItem="oG5-Ih-x6R" secondAttribute="bottom" constant="121" id="JtH-h1-1uc"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leadingMargin" id="QGe-f4-ifk"/>
-                                    <constraint firstItem="Fxm-1W-144" firstAttribute="centerY" secondItem="I1Z-OA-hfc" secondAttribute="centerY" id="QfZ-FJ-KA8"/>
-                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="134" id="TAZ-5m-gyg"/>
+                                    <constraint firstItem="Fxm-1W-144" firstAttribute="centerY" secondItem="I1Z-OA-hfc" secondAttribute="centerY" constant="138.5" id="QfZ-FJ-KA8"/>
+                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="46.5" id="TAZ-5m-gyg"/>
                                     <constraint firstAttribute="bottom" secondItem="Fxm-1W-144" secondAttribute="bottom" constant="37" id="TBo-Jq-TkV"/>
                                     <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="n3V-nE-WmD"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" constant="35" id="yEv-hd-BmO"/>
-                                    <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" constant="35" id="zmT-Tc-sOI"/>
+                                    <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" id="zmT-Tc-sOI"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -417,7 +417,7 @@
                             <constraint firstItem="yLn-hb-23x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cGH-Id-s8a"/>
                             <constraint firstItem="Fxm-1W-144" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="chc-ls-2Ls"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hUs-GM-9PC"/>
-                            <constraint firstItem="Fxm-1W-144" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o5G-Ua-fSq"/>
+                            <constraint firstItem="Fxm-1W-144" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4" id="o5G-Ua-fSq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S3B-iZ-Lhr" secondAttribute="trailing" id="wWK-6c-pyA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S3B-iZ-Lhr" secondAttribute="bottom" constant="15" id="zqD-Oj-94c"/>
                         </constraints>
