@@ -13,7 +13,8 @@ import BEMSimpleLineGraph
 class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     let apiManager = APIManager()
-    
+    var precipMapArray = [PrecipCondition]()
+
     @IBOutlet weak var day0: WeatherConditionView!
     @IBOutlet weak var day1: WeatherConditionView!
     @IBOutlet weak var day2: WeatherConditionView!
@@ -21,7 +22,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
     @IBOutlet weak var day4: WeatherConditionView!
     @IBOutlet weak var day5: WeatherConditionView!
     @IBOutlet weak var precipGraph: BEMSimpleLineGraphView!
-    
+
     @IBAction func refreshPressed(sender: UIBarButtonItem) {
         refresh()
     }
@@ -55,10 +56,12 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
         //Callback for putting received Data in the UI
         let refreshCallback: ([WeatherCondition],[PrecipCondition]) -> Void = { weatherConditions, precipConditions in
 
-
             print("Trying to put received data in the UI...")
             
             self.removeAllOverlays()
+
+            //Clear data we have previously stored
+            self.precipMapArray.removeAll()
             
             //Checks for empty array and shows error message in case someting went wrong
             if weatherConditions.isEmpty {
@@ -87,12 +90,17 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
                 day.iconLabel.text = wtr.iconChar
                 day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
             }
+
+            //For each hour in the next 24 hours, add data to array to then put in graph
             for i in 0...precipConditions.count-1{
-                print(precipConditions[i].printPrecip())
+                self.precipMapArray.append(precipConditions[i])
             }
             
             self.view.backgroundColor = weatherConditions[0].color
-            
+
+            //Reload graph with new data points
+            self.precipGraph.reloadGraph()
+
             print("Successfully filled UI with refreshed Data!")
 
             
@@ -105,11 +113,12 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     //Number of points in graph - 24 for next 24 hours
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
-        return 24
+        return precipMapArray.count
     }
 
+    //Fills each x-coord with y-value
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
-        return 1
+        return CGFloat(precipMapArray[index].precipIntensity)
     }
 
 }
