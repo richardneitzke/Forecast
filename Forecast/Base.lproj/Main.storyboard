@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gTC-MS-Ub9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -97,6 +98,17 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drag graph to get rain data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqn-6x-S3D">
+                                        <rect key="frame" x="201" y="342" width="158" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="158" id="GIH-S1-eyL"/>
+                                            <constraint firstAttribute="height" constant="21" id="Jcj-ha-CxZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -110,6 +122,7 @@
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leadingMargin" id="QGe-f4-ifk"/>
                                     <constraint firstAttribute="bottom" secondItem="Fxm-1W-144" secondAttribute="bottom" constant="37" id="TBo-Jq-TkV"/>
                                     <constraint firstItem="I1Z-OA-hfc" firstAttribute="top" secondItem="oG5-Ih-x6R" secondAttribute="bottom" constant="15" id="f4l-Gd-Vp4"/>
+                                    <constraint firstItem="hqn-6x-S3D" firstAttribute="firstBaseline" secondItem="I1Z-OA-hfc" secondAttribute="firstBaseline" id="p7K-8D-Moi"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" constant="35" id="yEv-hd-BmO"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" id="zmT-Tc-sOI"/>
                                 </constraints>
@@ -413,6 +426,7 @@
                         <constraints>
                             <constraint firstItem="S3B-iZ-Lhr" firstAttribute="top" secondItem="yLn-hb-23x" secondAttribute="bottom" id="38m-TX-aOX"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4mh-eE-phb"/>
+                            <constraint firstItem="hqn-6x-S3D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6mo-i5-W1k"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7R4-YG-VVu"/>
                             <constraint firstItem="S3B-iZ-Lhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9Tr-BU-h5p"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UGa-iK-5Rk"/>
@@ -455,6 +469,7 @@
                         <outlet property="day3" destination="T8X-Xw-epN" id="nYw-Nb-9Sq"/>
                         <outlet property="day4" destination="ebh-y8-mGx" id="R2M-ga-2HN"/>
                         <outlet property="day5" destination="Vv0-md-eYf" id="xEb-eC-THH"/>
+                        <outlet property="dragLabel" destination="hqn-6x-S3D" id="sM3-jV-bsA"/>
                         <outlet property="precipGraph" destination="Fxm-1W-144" id="EtJ-XY-b5J"/>
                     </connections>
                 </viewController>

@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
     @IBOutlet weak var day4: WeatherConditionView!
     @IBOutlet weak var day5: WeatherConditionView!
     @IBOutlet weak var precipGraph: BEMSimpleLineGraphView!
+    @IBOutlet weak var dragLabel: UILabel!
 
     @IBAction func refreshPressed(sender: UIBarButtonItem) {
         refresh()
@@ -137,6 +138,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     //Change temp label to data about the map where the user touches it
     func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: Int) {
+        dragLabel.hidden = true
         let precipProb = Int(precipMapArray[index].precipProbability * 100)
         let precipIntensity = precipMapArray[index].precipIntensity
         day0.degreeLabel.text = "\(precipProb)% of rain at \(precipIntensity) in./hr"
@@ -144,6 +146,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     //User released from the map
     func lineGraph(graph: BEMSimpleLineGraphView, didReleaseTouchFromGraphWithClosestIndex index: CGFloat) {
+        dragLabel.hidden = false
         day0.degreeLabel.text = currentTemp
     }
 
