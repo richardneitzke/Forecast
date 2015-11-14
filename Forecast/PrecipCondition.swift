@@ -23,4 +23,8 @@ class PrecipCondition {
         let comp = calendar.components([.Hour, .Minute], fromDate: date)
         self.time = comp.hour
     }
+
+    func printPrecip(){
+        print("prob: \(precipProbability)\nint:\(precipIntensity)\ntime: \(time)")
+    }
 }

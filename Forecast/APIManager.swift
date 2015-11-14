@@ -16,7 +16,7 @@ class APIManager {
     var locationManager: OneShotLocationManager?
     
     //Tries to fetch the Forecast from forecast.io
-    func fetchForecast(callback:([WeatherCondition])->()) {
+    func fetchForecast(callback:([WeatherCondition],[PrecipCondition])->()) {
         
         //Empty [WeatherCondition] which is to be filled with data
         var weatherConditions = [WeatherCondition]()
@@ -73,12 +73,12 @@ class APIManager {
                             precipConditions.append(precip)
                         }
                         print("Success! Calling back WeatherController with data...")
-                        callback(weatherConditions)
+                        callback(weatherConditions, precipConditions)
                         
                     } else {
                         print("Error while requesting weather data:")
                         print(response.result.error?.localizedDescription)
-                        callback(weatherConditions)
+                        callback(weatherConditions, precipConditions)
                     }
                     
                 })
@@ -87,7 +87,7 @@ class APIManager {
             } else if error != nil {
                 print("Error while fetching location:")
                 print(error!.localizedDescription)
-                callback(weatherConditions)
+                callback(weatherConditions, precipConditions)
 
             }
             self.locationManager = nil

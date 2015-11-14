@@ -53,8 +53,9 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
     func refresh() {
         
         //Callback for putting received Data in the UI
-        let refreshCallback: ([WeatherCondition]) -> Void = { weatherConditions in
-            
+        let refreshCallback: ([WeatherCondition],[PrecipCondition]) -> Void = { weatherConditions, precipConditions in
+
+
             print("Trying to put received data in the UI...")
             
             self.removeAllOverlays()
@@ -86,6 +87,9 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
                 day.iconLabel.text = wtr.iconChar
                 day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
             }
+            for i in 0...precipConditions.count-1{
+                print(precipConditions[i].printPrecip())
+            }
             
             self.view.backgroundColor = weatherConditions[0].color
             
@@ -93,7 +97,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
             
         }
-        
+
         //Calling the API-Manager for fresh Data
         self.showWaitOverlayWithText("Refreshing...")
         apiManager.fetchForecast({ weatherConditions in refreshCallback(weatherConditions)})
