@@ -9,6 +9,7 @@
 import UIKit
 import SwiftOverlays
 import BEMSimpleLineGraph
+import SVProgressHUD
 
 class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
@@ -108,12 +109,11 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
             self.precipGraph.reloadGraph()
 
             print("Successfully filled UI with refreshed Data!")
-
-            
+            SVProgressHUD.dismiss()
         }
 
         //Calling the API-Manager for fresh Data
-        self.showWaitOverlayWithText("Refreshing...")
+        SVProgressHUD.showWithStatus("Grabbing Weather")
         apiManager.fetchForecast({ weatherConditions in refreshCallback(weatherConditions)})
     }
 
