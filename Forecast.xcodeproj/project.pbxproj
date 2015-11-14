@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		279389BD1BF565B8000BEF25 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279389BC1BF565B8000BEF25 /* AboutViewController.swift */; };
-		315E23D8FF9AAA9B4BEE001C /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001034A2C372B9ABE4B3F461 /* Pods_Forecast.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		315E23D8FF9AAA9B4BEE001C /* Pods_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001034A2C372B9ABE4B3F461 /* Pods_Forecast.framework */; };
 		799CE5C41BF1389E00F8CDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C31BF1389E00F8CDCE /* AppDelegate.swift */; };
 		799CE5C61BF1389E00F8CDCE /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5C51BF1389E00F8CDCE /* WeatherViewController.swift */; };
 		799CE5C91BF1389E00F8CDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5C71BF1389E00F8CDCE /* Main.storyboard */; };
@@ -19,6 +19,7 @@
 		799CE5DE1BF1437E00F8CDCE /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */; };
 		799CE5E61BF1501500F8CDCE /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5E51BF14FBC00F8CDCE /* weathericons-regular-webfont.ttf */; };
 		799CE5EA1BF173DA00F8CDCE /* WeatherConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5E91BF173DA00F8CDCE /* WeatherConditionView.swift */; };
+		8C3F26301BF7CC170079F806 /* PrecipCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F262F1BF7CC170079F806 /* PrecipCondition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		799CE5E51BF14FBC00F8CDCE /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		799CE5E91BF173DA00F8CDCE /* WeatherConditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherConditionView.swift; sourceTree = "<group>"; };
+		8C3F262F1BF7CC170079F806 /* PrecipCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipCondition.swift; sourceTree = "<group>"; };
 		CE7B0B8BBD0149EE0D8FB8ED /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				279389BC1BF565B8000BEF25 /* AboutViewController.swift */,
 				799CE5DB1BF142C800F8CDCE /* APIManager.swift */,
 				799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */,
+				8C3F262F1BF7CC170079F806 /* PrecipCondition.swift */,
 				799CE5D91BF13EA200F8CDCE /* OneShotLocationManager.swift */,
 				799CE5C71BF1389E00F8CDCE /* Main.storyboard */,
 				799CE5CA1BF1389E00F8CDCE /* Assets.xcassets */,
@@ -141,7 +144,7 @@
 				TargetAttributes = {
 					799CE5BF1BF1389E00F8CDCE = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 87FMZ4YMSC;
+						DevelopmentTeam = P857ZRS6WM;
 					};
 				};
 			};
@@ -232,6 +235,7 @@
 			files = (
 				799CE5DC1BF142C800F8CDCE /* APIManager.swift in Sources */,
 				799CE5C61BF1389E00F8CDCE /* WeatherViewController.swift in Sources */,
+				8C3F26301BF7CC170079F806 /* PrecipCondition.swift in Sources */,
 				799CE5DA1BF13EA200F8CDCE /* OneShotLocationManager.swift in Sources */,
 				279389BD1BF565B8000BEF25 /* AboutViewController.swift in Sources */,
 				799CE5EA1BF173DA00F8CDCE /* WeatherConditionView.swift in Sources */,
@@ -348,11 +352,14 @@
 			baseConfigurationReference = 07997D2FFA80EF62B710E738 /* Pods-Forecast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Forecast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richardneitzke.Forecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -361,11 +368,14 @@
 			baseConfigurationReference = CE7B0B8BBD0149EE0D8FB8ED /* Pods-Forecast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Forecast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richardneitzke.Forecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

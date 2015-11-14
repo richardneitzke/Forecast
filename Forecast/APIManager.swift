@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import SwiftyJSON
 import Alamofire
 
@@ -16,10 +15,12 @@ class APIManager {
     var locationManager: OneShotLocationManager?
     
     //Tries to fetch the Forecast from forecast.io
-    func fetchForecast(callback:([WeatherCondition])->()) {
+    func fetchForecast(callback:([WeatherCondition],[PrecipCondition])->()) {
         
         //Empty [WeatherCondition] which is to be filled with data
         var weatherConditions = [WeatherCondition]()
+        //Empty [PrecipCondition] which is to be filled with data for rain map
+        var precipConditions = [PrecipCondition]()
         
         print("Trying to locate phone...")
         
@@ -62,14 +63,21 @@ class APIManager {
                             let weather = WeatherCondition(degrees: deg, units: unt, icon: icn, time: tim)
                             weatherConditions.append(weather)
                         }
-                        
+                        for i in 1...24{
+                            let precipProb = json["hourly"]["data"][i]["precipProbability"].doubleValue
+                            let precipIntensity = json["hourly"]["data"][i]["precipIntensity"].doubleValue
+                            let preciptime = json["hourly"]["data"][i]["time"].stringValue
+
+                            let precip = PrecipCondition(precipProbability: precipProb, precipIntensity: precipIntensity, time: preciptime)
+                            precipConditions.append(precip)
+                        }
                         print("Success! Calling back WeatherController with data...")
-                        callback(weatherConditions)
+                        callback(weatherConditions, precipConditions)
                         
                     } else {
                         print("Error while requesting weather data:")
                         print(response.result.error?.localizedDescription)
-                        callback(weatherConditions)
+                        callback(weatherConditions, precipConditions)
                     }
                     
                 })
@@ -78,7 +86,7 @@ class APIManager {
             } else if error != nil {
                 print("Error while fetching location:")
                 print(error!.localizedDescription)
-                callback(weatherConditions)
+                callback(weatherConditions, precipConditions)
 
             }
             self.locationManager = nil
