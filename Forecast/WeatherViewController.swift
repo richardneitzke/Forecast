@@ -129,7 +129,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     //Creates labels for x-axis
     func lineGraph(graph: BEMSimpleLineGraphView, labelOnXAxisForIndex index: Int) -> String {
-        if(index % 2 == 0){
+        if(index % 3 == 0){
             return String(precipMapArray[index].time)
         }else{
             return ""
