@@ -57,8 +57,8 @@
                                         <animations/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="NO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
                                                 <color key="value" red="0.36862745879999997" green="0.98823535439999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
                                             </userDefinedRuntimeAttribute>

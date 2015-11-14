@@ -10,7 +10,7 @@ import UIKit
 import SwiftOverlays
 import BEMSimpleLineGraph
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     let apiManager = APIManager()
     
@@ -27,9 +27,8 @@ class WeatherViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
+
         refresh()
-        
         setNeedsStatusBarAppearanceUpdate()
         
         //Inserts Background Gradient
@@ -98,6 +97,15 @@ class WeatherViewController: UIViewController {
         //Calling the API-Manager for fresh Data
         self.showWaitOverlayWithText("Refreshing...")
         apiManager.fetchForecast({ weatherConditions in refreshCallback(weatherConditions)})
+    }
+
+    //Number of points in graph - 24 for next 24 hours
+    func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
+        return 3
+    }
+
+    func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
+        return 
     }
 
 }
