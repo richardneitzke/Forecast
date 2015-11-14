@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftOverlays
+import BEMSimpleLineGraph
 
 class WeatherViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var day3: WeatherConditionView!
     @IBOutlet weak var day4: WeatherConditionView!
     @IBOutlet weak var day5: WeatherConditionView!
+    @IBOutlet weak var precipGraph: BEMSimpleLineGraphView!
     
     @IBAction func refreshPressed(sender: UIBarButtonItem) {
         refresh()

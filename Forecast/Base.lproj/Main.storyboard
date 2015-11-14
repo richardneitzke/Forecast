@@ -15,7 +15,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Weather View Controller-->
+        <!--Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="WeatherViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxm-1W-144" customClass="BEMSimpleLineGraphView">
                                         <rect key="frame" x="35" y="305" width="491" height="133"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
+                                                <color key="value" red="0.36862745879999997" green="0.98823535439999999" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorPoint">
+                                                <color key="value" red="0.26422333717346191" green="0.91602712869644165" blue="0.87323981523513794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="ldv-37-gyK"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="4dm-oB-2Do"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -415,6 +429,7 @@
                         <outlet property="day3" destination="T8X-Xw-epN" id="nYw-Nb-9Sq"/>
                         <outlet property="day4" destination="ebh-y8-mGx" id="R2M-ga-2HN"/>
                         <outlet property="day5" destination="Vv0-md-eYf" id="xEb-eC-THH"/>
+                        <outlet property="precipGraph" destination="Fxm-1W-144" id="EtJ-XY-b5J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
