@@ -20,6 +20,8 @@ class APIManager {
         
         //Empty [WeatherCondition] which is to be filled with data
         var weatherConditions = [WeatherCondition]()
+        //Empty [PrecipCondition] which is to be filled with data for rain map
+        var precipConditions = [PrecipCondition]()
         
         print("Trying to locate phone...")
         
@@ -62,7 +64,14 @@ class APIManager {
                             let weather = WeatherCondition(degrees: deg, units: unt, icon: icn, time: tim)
                             weatherConditions.append(weather)
                         }
-                        
+                        for i in 1...24{
+                            let precipProb = json["hourly"]["data"][i]["precipProbability"].doubleValue
+                            let precipIntensity = json["hourly"]["data"][i]["precipIntensity"].doubleValue
+                            let preciptime = json["hourly"]["data"][i]["time"].stringValue
+
+                            let precip = PrecipCondition(precipProbability: precipProb, precipIntensity: precipIntensity, time: preciptime)
+                            precipConditions.append(precip)
+                        }
                         print("Success! Calling back WeatherController with data...")
                         callback(weatherConditions)
                         

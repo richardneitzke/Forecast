@@ -101,11 +101,11 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     //Number of points in graph - 24 for next 24 hours
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
-        return 3
+        return 24
     }
 
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
-        return 
+        return 1
     }
 
 }
