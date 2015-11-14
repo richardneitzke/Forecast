@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     let apiManager = APIManager()
     var precipMapArray = [PrecipCondition]()
+    var currentTemp = ""
 
     @IBOutlet weak var day0: WeatherConditionView!
     @IBOutlet weak var day1: WeatherConditionView!
@@ -30,7 +31,7 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
     override func viewDidLoad() {
         precipGraph.colorBackgroundXaxis = UIColor(white: 1, alpha: 0)
         precipGraph.colorBackgroundYaxis = UIColor(white: 1, alpha: 0)
-        precipGraph.autoScaleYAxis = true
+        day0.degreeLabel.adjustsFontSizeToFitWidth = true
         refresh()
         setNeedsStatusBarAppearanceUpdate()
         
@@ -91,6 +92,8 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
                 if day.dayLabel != nil {day.dayLabel.text = wtr.day}
                 day.iconLabel.text = wtr.iconChar
                 day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
+                //Set currentTemp var in order to get back after reading map info into that textfield
+                self.currentTemp = "\(wtr.degrees)\(wtr.unit)"
             }
 
             //For each hour in the next 24 hours, add data to array to then put in graph
@@ -123,12 +126,25 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
         return CGFloat(precipMapArray[index].precipProbability) * 100
     }
 
+    //Creates labels for x-axis
     func lineGraph(graph: BEMSimpleLineGraphView, labelOnXAxisForIndex index: Int) -> String {
         if(index % 2 == 0){
             return String(precipMapArray[index].time)
         }else{
             return ""
         }
+    }
+
+    //Change temp label to data about the map where the user touches it
+    func lineGraph(graph: BEMSimpleLineGraphView, didTouchGraphWithClosestIndex index: Int) {
+        let precipProb = Int(precipMapArray[index].precipProbability * 100)
+        let precipIntensity = precipMapArray[index].precipIntensity
+        day0.degreeLabel.text = "\(precipProb)% of rain at \(precipIntensity) in./hr"
+    }
+
+    //User released from the map
+    func lineGraph(graph: BEMSimpleLineGraphView, didReleaseTouchFromGraphWithClosestIndex index: CGFloat) {
+        day0.degreeLabel.text = currentTemp
     }
 
 }

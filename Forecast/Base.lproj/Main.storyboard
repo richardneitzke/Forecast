@@ -75,22 +75,27 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="colorYaxisLabel">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableTouchReport" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoScaleYAxis" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="ldv-37-gyK"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="4dm-oB-2Do"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
-                                        <rect key="frame" x="193" y="258" width="166" height="78"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
+                                        <rect key="frame" x="142" y="274" width="276" height="78"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="166" id="Fgc-oI-Ggz"/>
+                                            <constraint firstAttribute="width" constant="276" id="Fgc-oI-Ggz"/>
                                             <constraint firstAttribute="height" constant="78" id="QRU-GN-2mY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="120"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="80"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -100,12 +105,11 @@
                                     <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="CX8-fr-iFT"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="bottom" secondItem="yLn-hb-23x" secondAttribute="bottomMargin" id="Gr8-oB-DHA"/>
                                     <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="-91.5" id="IJ5-Pz-9xF"/>
+                                    <constraint firstItem="Fxm-1W-144" firstAttribute="bottom" secondItem="yLn-hb-23x" secondAttribute="bottomMargin" id="JJd-83-2sa"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="top" secondItem="oG5-Ih-x6R" secondAttribute="bottom" constant="75" id="JtH-h1-1uc"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leadingMargin" id="QGe-f4-ifk"/>
-                                    <constraint firstItem="Fxm-1W-144" firstAttribute="centerY" secondItem="I1Z-OA-hfc" secondAttribute="centerY" constant="103.5" id="QfZ-FJ-KA8"/>
-                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="59.5" id="TAZ-5m-gyg"/>
                                     <constraint firstAttribute="bottom" secondItem="Fxm-1W-144" secondAttribute="bottom" constant="37" id="TBo-Jq-TkV"/>
-                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" constant="-4" id="n3V-nE-WmD"/>
+                                    <constraint firstItem="I1Z-OA-hfc" firstAttribute="top" secondItem="oG5-Ih-x6R" secondAttribute="bottom" constant="15" id="f4l-Gd-Vp4"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" constant="35" id="yEv-hd-BmO"/>
                                     <constraint firstItem="Fxm-1W-144" firstAttribute="leading" secondItem="yLn-hb-23x" secondAttribute="leading" id="zmT-Tc-sOI"/>
                                 </constraints>
@@ -418,6 +422,7 @@
                             <constraint firstItem="Fxm-1W-144" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="chc-ls-2Ls"/>
                             <constraint firstItem="yLn-hb-23x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hUs-GM-9PC"/>
                             <constraint firstItem="Fxm-1W-144" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4" id="o5G-Ua-fSq"/>
+                            <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q1o-ea-WLM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S3B-iZ-Lhr" secondAttribute="trailing" id="wWK-6c-pyA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S3B-iZ-Lhr" secondAttribute="bottom" constant="15" id="zqD-Oj-94c"/>
                         </constraints>
