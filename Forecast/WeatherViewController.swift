@@ -78,12 +78,7 @@ class WeatherViewController: UIViewController {
             let days = [self.day0, self.day1, self.day2, self.day3, self.day4, self.day5]
             
             for i in 0...5 {
-                let day = days[i]
-                let wtr = weatherConditions[i]
-                
-                if day.dayLabel != nil {day.dayLabel.text = wtr.day}
-                day.iconLabel.text = wtr.iconChar
-                day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
+                days[i].weatherCondition = weatherConditions[i]
             }
             
             self.view.backgroundColor = weatherConditions[0].color
