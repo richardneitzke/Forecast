@@ -28,7 +28,8 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
     }
     
     override func viewDidLoad() {
-
+        precipGraph.colorBackgroundXaxis = UIColor(white: 1, alpha: 0)
+        precipGraph.colorBackgroundYaxis = UIColor(white: 1, alpha: 0)
         refresh()
         setNeedsStatusBarAppearanceUpdate()
         
@@ -118,7 +119,15 @@ class WeatherViewController: UIViewController, BEMSimpleLineGraphDelegate {
 
     //Fills each x-coord with y-value
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
-        return CGFloat(precipMapArray[index].precipIntensity)
+        return CGFloat(precipMapArray[index].precipProbability)
+    }
+
+    func lineGraph(graph: BEMSimpleLineGraphView, labelOnXAxisForIndex index: Int) -> String {
+        if(index % 2 == 0){
+            return String(precipMapArray[index].time)
+        }else{
+            return ""
+        }
     }
 
 }
