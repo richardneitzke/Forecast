@@ -387,7 +387,7 @@
                         <outlet property="day3" destination="T8X-Xw-epN" id="nYw-Nb-9Sq"/>
                         <outlet property="day4" destination="ebh-y8-mGx" id="R2M-ga-2HN"/>
                         <outlet property="day5" destination="Vv0-md-eYf" id="xEb-eC-THH"/>
-                        <segue destination="9JU-2d-QUY" kind="presentation" identifier="showDetail" id="iOu-cC-zc2"/>
+                        <segue destination="9JU-2d-QUY" kind="custom" identifier="showDetail" customClass="AFBlurSegue" id="iOu-cC-zc2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -565,7 +565,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="maw-Qe-MU4" firstAttribute="centerY" secondItem="cdH-Ph-qRH" secondAttribute="centerY" id="Cez-xG-BJZ"/>
                                     <constraint firstItem="maw-Qe-MU4" firstAttribute="centerX" secondItem="cdH-Ph-qRH" secondAttribute="centerX" id="eCi-dS-UBS"/>
@@ -573,7 +573,6 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.21176470589999999" green="0.70980392160000005" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cdH-Ph-qRH" firstAttribute="leading" secondItem="xV3-aA-uMZ" secondAttribute="trailing" constant="-550" id="AV3-9T-LGk"/>
                             <constraint firstItem="cdH-Ph-qRH" firstAttribute="top" secondItem="xV3-aA-uMZ" secondAttribute="bottom" constant="8" id="CHN-bN-sCP"/>
@@ -906,6 +905,7 @@
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="9JU-2d-QUY" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="46F-ft-mcH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dav-N3-UiN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

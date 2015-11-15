@@ -1,14 +1,17 @@
 PODS:
+  - AFBlurSegue (1.2.1)
   - Alamofire (3.1.2)
   - SwiftOverlays (1.0)
   - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
+  - AFBlurSegue (~> 1.2)
   - Alamofire (~> 3.0)
   - SwiftOverlays (~> 1.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  AFBlurSegue: 27e55f015360f4e11117d2c3a959dbb5316eef78
   Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
   SwiftOverlays: 6a47bab3ed2784c378f07b275269f9e8231526e6
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3

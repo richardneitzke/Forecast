@@ -26,7 +26,7 @@ class DetailWeatherViewController: UIViewController {
         let color2 = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).CGColor as CGColorRef
         gradientLayer.colors = [color1, color2]
         
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        //self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
         
         //Makes Navigation Bar Transparent
         let bar:UINavigationBar! =  self.navigationController?.navigationBar
@@ -44,7 +44,7 @@ class DetailWeatherViewController: UIViewController {
         let wConView = self.view as! WeatherConditionView
         let wCon = wConView.weatherCondition
         self.title = "Weather on \(wCon!.fullDay)"
-        wConView.backgroundColor = wCon!.color
+        //wConView.backgroundColor = wCon!.color
     }
     
 }
