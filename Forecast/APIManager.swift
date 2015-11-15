@@ -47,19 +47,28 @@ class APIManager {
                         let json = JSON(response.result.value!)
                         
                         let currDeg = json["currently"]["temperature"].doubleValue
+                        let currMaxDeg = json["daily"]["data"][0]["temperatureMax"].doubleValue
                         let currUnt = json["flags"]["units"].stringValue
                         let currIcn = json["currently"]["icon"].stringValue
                         let currTim = json["currently"]["time"].stringValue
+                        let currMinDeg = json["daily"]["data"][0]["temperatureMin"].doubleValue
+                        let currPrecip = json["daily"]["data"][0]["precipProbability"].doubleValue
+                        let currWind = json["daily"]["data"][0]["windSpeed"].doubleValue
+                        let currDesc = json["daily"]["data"][0]["summary"].stringValue
                         
-                        weatherConditions.append(WeatherCondition(degrees: currDeg, units: currUnt, icon: currIcn, time: currTim))
+                        weatherConditions.append(WeatherCondition(maxDegrees: currMaxDeg, units: currUnt, icon: currIcn, time: currTim, minDegrees: currMinDeg, windSpeed: currWind, precipitation: currPrecip, currDeg: currDeg, description: currDesc))
                         
                         for i in 1...5 {
-                            let deg = json["daily"]["data"][i]["temperatureMax"].doubleValue
+                            let maxDeg = json["daily"]["data"][i]["temperatureMax"].doubleValue
                             let unt = json["flags"]["units"].stringValue
                             let icn = json["daily"]["data"][i]["icon"].stringValue
                             let tim = json["daily"]["data"][i]["time"].stringValue
+                            let minDeg = json["daily"]["data"][i]["temperatureMin"].doubleValue
+                            let precip = json["daily"]["data"][i]["precipProbability"].doubleValue
+                            let wind = json["daily"]["data"][i]["windSpeed"].doubleValue
+                            let desc = json["daily"]["data"][i]["summary"].stringValue
                             
-                            let weather = WeatherCondition(degrees: deg, units: unt, icon: icn, time: tim)
+                            let weather = WeatherCondition(maxDegrees: maxDeg, units: unt, icon: icn, time: tim, minDegrees: minDeg, windSpeed: wind, precipitation: precip, currDeg: nil, description: desc)
                             weatherConditions.append(weather)
                         }
                         
@@ -73,17 +82,17 @@ class APIManager {
                     }
                     
                 })
-
+                
                 
             } else if error != nil {
                 print("Error while fetching location:")
                 print(error!.localizedDescription)
                 callback(weatherConditions)
-
+                
             }
             self.locationManager = nil
         }
-
+        
     }
     
 }
