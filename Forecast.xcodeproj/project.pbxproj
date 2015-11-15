@@ -19,6 +19,7 @@
 		799CE5DE1BF1437E00F8CDCE /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */; };
 		799CE5E61BF1501500F8CDCE /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799CE5E51BF14FBC00F8CDCE /* weathericons-regular-webfont.ttf */; };
 		799CE5EA1BF173DA00F8CDCE /* WeatherConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CE5E91BF173DA00F8CDCE /* WeatherConditionView.swift */; };
+		79BEB7B31BF802BC0065F98A /* DetailWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BEB7B21BF802BC0065F98A /* DetailWeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
 		799CE5E51BF14FBC00F8CDCE /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
 		799CE5E91BF173DA00F8CDCE /* WeatherConditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherConditionView.swift; sourceTree = "<group>"; };
+		79BEB7B21BF802BC0065F98A /* DetailWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWeatherViewController.swift; sourceTree = "<group>"; };
 		CE7B0B8BBD0149EE0D8FB8ED /* Pods-Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forecast/Pods-Forecast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,13 +85,14 @@
 			children = (
 				799CE5C31BF1389E00F8CDCE /* AppDelegate.swift */,
 				799CE5C51BF1389E00F8CDCE /* WeatherViewController.swift */,
+				79BEB7B21BF802BC0065F98A /* DetailWeatherViewController.swift */,
 				279389BC1BF565B8000BEF25 /* AboutViewController.swift */,
-				799CE5DB1BF142C800F8CDCE /* APIManager.swift */,
+				799CE5E91BF173DA00F8CDCE /* WeatherConditionView.swift */,
 				799CE5DD1BF1437E00F8CDCE /* WeatherCondition.swift */,
+				799CE5DB1BF142C800F8CDCE /* APIManager.swift */,
 				799CE5D91BF13EA200F8CDCE /* OneShotLocationManager.swift */,
 				799CE5C71BF1389E00F8CDCE /* Main.storyboard */,
 				799CE5CA1BF1389E00F8CDCE /* Assets.xcassets */,
-				799CE5E91BF173DA00F8CDCE /* WeatherConditionView.swift */,
 				799CE5E51BF14FBC00F8CDCE /* weathericons-regular-webfont.ttf */,
 				799CE5CC1BF1389E00F8CDCE /* LaunchScreen.storyboard */,
 				799CE5CF1BF1389E00F8CDCE /* Info.plist */,
@@ -232,6 +235,7 @@
 			files = (
 				799CE5DC1BF142C800F8CDCE /* APIManager.swift in Sources */,
 				799CE5C61BF1389E00F8CDCE /* WeatherViewController.swift in Sources */,
+				79BEB7B31BF802BC0065F98A /* DetailWeatherViewController.swift in Sources */,
 				799CE5DA1BF13EA200F8CDCE /* OneShotLocationManager.swift in Sources */,
 				279389BD1BF565B8000BEF25 /* AboutViewController.swift in Sources */,
 				799CE5EA1BF173DA00F8CDCE /* WeatherConditionView.swift in Sources */,
