@@ -11,20 +11,47 @@ import UIKit
 
 class WeatherCondition {
     
-    var degrees:Int
-    var unit:String
+    //Properties needed by WeatherViewController
+    var maxDegrees:Int
+    var tempUnit:String
     var iconChar:String
     var day:String
     var color:UIColor
     
-    //Builds a WeatherCondition from certain API-Data
-    init(degrees:Double,units:String,icon:String,time:String) {
+    var currDeg:Int?
         
-        self.degrees = Int(degrees)
+    //Properties needed by DetailWeatherViewController
+    var fullDay:String
+    var minDegrees:Int
+    var precipitation:Int
+    var windSpeed:String
+    var windUnit:String
+    var description:String
+    var temperatures:[Double]
+    
+    //Builds a WeatherCondition from certain API-Data
+    init(maxDegrees:Double,units:String,icon:String,time:String, minDegrees:Double, windSpeed:Double, precipitation:Double, currDeg:Double?, description:String, temperatures:[Double]) {
+        
+        self.temperatures = temperatures
+        
+        self.minDegrees = Int(minDegrees)
+        self.maxDegrees = Int(maxDegrees)
+        
+        self.precipitation = Int(precipitation*100)
+        
+        self.windSpeed = String(format: "%.2f", windSpeed)
+        
+        if let currentDegrees = currDeg {self.currDeg = Int(currentDegrees)}
+        
+        self.description = description
         
         switch units {
-        case "us": self.unit = "°F"
-        default: self.unit = "°C"
+        case "us":
+            self.tempUnit = "°F"
+            self.windUnit = "mp/h"
+        default:
+            self.tempUnit = "°C"
+            self.windUnit = "km/h"
         }
         
         switch icon {
@@ -57,9 +84,21 @@ class WeatherCondition {
         case 7: self.day = "SAT"
         default: self.day = "ERR"
         }
+        
+        switch dayNumber {
+        case 1: self.fullDay = "Sunday"
+        case 2: self.fullDay = "Monday"
+        case 3: self.fullDay = "Tuesday"
+        case 4: self.fullDay = "Wednesday"
+        case 5: self.fullDay = "Thurday"
+        case 6: self.fullDay = "Friday"
+        case 7: self.fullDay = "Saturday"
+        default: self.fullDay = "DAY ERROR"
+        }
+        
 
-        var tempCelsius = degrees
-        if unit == "°F" { tempCelsius = (degrees-32)/(9/5) }
+        var tempCelsius = maxDegrees
+        if tempUnit == "°F" { tempCelsius = (maxDegrees-32)/(9/5) }
         
         switch tempCelsius {
         case (35)...(300): color = UIColor(hue: 10.0/360.0, saturation: 0.74, brightness: 1, alpha: 1)
@@ -70,9 +109,9 @@ class WeatherCondition {
         case (-5)...(5): color = UIColor(hue: 190.0/360.0, saturation: 0.84, brightness: 0.76, alpha: 1)
         default: color = UIColor.blackColor()
         }
+        
         }
         
         
     }
-    
     

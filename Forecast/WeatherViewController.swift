@@ -9,8 +9,8 @@
 import UIKit
 import SwiftOverlays
 
-class WeatherViewController: UIViewController {
-
+class WeatherViewController: UIViewController, UIGestureRecognizerDelegate {
+    
     let apiManager = APIManager()
     
     @IBOutlet weak var day0: WeatherConditionView!
@@ -20,11 +20,15 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var day4: WeatherConditionView!
     @IBOutlet weak var day5: WeatherConditionView!
     
+    var days: [WeatherConditionView]!
+    
     @IBAction func refreshPressed(sender: UIBarButtonItem) {
         refresh()
     }
     
     override func viewDidLoad() {
+        
+        days = [day0, day1, day2, day3, day4, day5]
         
         refresh()
         
@@ -46,8 +50,39 @@ class WeatherViewController: UIViewController {
         bar.shadowImage = UIImage()
         bar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         bar.barStyle = .BlackTranslucent
+        
+        //Adds a GestureRecognizer to WeatherConditionViews
+        for i in 0...5 { days[i].addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("day\(i)Pressed"))) }
+        
     }
-
+    
+    //Functions that are called by the TapGestureRecognizers (bad practice; find a better way?)
+    func day0Pressed() { dayPressed(0) }
+    func day1Pressed() { dayPressed(1) }
+    func day2Pressed() { dayPressed(2) }
+    func day3Pressed() { dayPressed(3) }
+    func day4Pressed() { dayPressed(4) }
+    func day5Pressed() { dayPressed(5) }
+    
+    //Calls the DetailWeatherViewController with the WeatherCondition as sender
+    func dayPressed(number:Int) {
+        print("WeatherConditionView \(number) pressed!")
+        performSegueWithIdentifier("showDetail", sender: days[number].weatherCondition)
+    }
+    
+    //Sets the weatherCondition of the DetailWeatherViewController to the pressed one
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            
+            let destinationNavController = segue.destinationViewController as! UINavigationController
+            let detailWeatherViewController = destinationNavController.viewControllers.first as! DetailWeatherViewController
+            let weatherView = detailWeatherViewController.view as! WeatherConditionView
+            
+            weatherView.weatherCondition = sender as? WeatherCondition
+            
+        }
+    }
+    
     //Refreshes the Data/UI
     func refresh() {
         
@@ -56,7 +91,7 @@ class WeatherViewController: UIViewController {
             
             print("Trying to put received data in the UI...")
             
-            self.removeAllOverlays()
+            SwiftOverlays.removeAllBlockingOverlays()
             
             //Checks for empty array and shows error message in case someting went wrong
             if weatherConditions.isEmpty {
@@ -74,28 +109,17 @@ class WeatherViewController: UIViewController {
                 return
             }
             
-            //Reads the [WeatherCondition] in the UI
-            let days = [self.day0, self.day1, self.day2, self.day3, self.day4, self.day5]
-            
-            for i in 0...5 {
-                let day = days[i]
-                let wtr = weatherConditions[i]
-                
-                if day.dayLabel != nil {day.dayLabel.text = wtr.day}
-                day.iconLabel.text = wtr.iconChar
-                day.degreeLabel.text = "\(wtr.degrees)\(wtr.unit)"
-            }
+            //Fills the [WeatherCondition] in the UI
+            for i in 0...5 { self.days[i].weatherCondition = weatherConditions[i] }
             
             self.view.backgroundColor = weatherConditions[0].color
-            
             print("Successfully filled UI with refreshed Data!")
-
             
         }
         
         //Calling the API-Manager for fresh Data
-        self.showWaitOverlayWithText("Refreshing...")
+        SwiftOverlays.showBlockingWaitOverlayWithText("Refreshing...")
         apiManager.fetchForecast({ weatherConditions in refreshCallback(weatherConditions)})
     }
-
+    
 }
