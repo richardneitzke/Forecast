@@ -37,12 +37,13 @@ class APIManager {
                 //Requesting Data from Server
                 //Register at developer.forecast.io for your own API-Key. Please don't use this key if you're using this code in your own project.
                 
-                Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)").responseJSON(completionHandler: {response in
+                Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)?extend=hourly").responseJSON(completionHandler: {response in
                     
                     //Checking for successful Response
                     if response.result.value != nil {
                         
                         print("Server responded! Compiling Raw Data to [CurrentWeatherData]...")
+                        print(response.request!)
                         
                         let json = JSON(response.result.value!)
                         
@@ -56,7 +57,11 @@ class APIManager {
                         let currWind = json["daily"]["data"][0]["windSpeed"].doubleValue
                         let currDesc = json["daily"]["data"][0]["summary"].stringValue
                         
-                        weatherConditions.append(WeatherCondition(maxDegrees: currMaxDeg, units: currUnt, icon: currIcn, time: currTim, minDegrees: currMinDeg, windSpeed: currWind, precipitation: currPrecip, currDeg: currDeg, description: currDesc))
+                        var currTemperatures = [Double]()
+                        for i in 0...23 { currTemperatures.append(json["hourly"]["data"][i]["temperature"].doubleValue) }
+                        
+                        
+                        weatherConditions.append(WeatherCondition(maxDegrees: currMaxDeg, units: currUnt, icon: currIcn, time: currTim, minDegrees: currMinDeg, windSpeed: currWind, precipitation: currPrecip, currDeg: currDeg, description: currDesc, temperatures: currTemperatures))
                         
                         for i in 1...5 {
                             let maxDeg = json["daily"]["data"][i]["temperatureMax"].doubleValue
@@ -68,7 +73,10 @@ class APIManager {
                             let wind = json["daily"]["data"][i]["windSpeed"].doubleValue
                             let desc = json["daily"]["data"][i]["summary"].stringValue
                             
-                            let weather = WeatherCondition(maxDegrees: maxDeg, units: unt, icon: icn, time: tim, minDegrees: minDeg, windSpeed: wind, precipitation: precip, currDeg: nil, description: desc)
+                            var temperatures = [Double]()
+                            for j in 0...23 { temperatures.append(json["hourly"]["data"][j+(24*i)]["temperature"].doubleValue) }
+                            
+                            let weather = WeatherCondition(maxDegrees: maxDeg, units: unt, icon: icn, time: tim, minDegrees: minDeg, windSpeed: wind, precipitation: precip, currDeg: nil, description: desc, temperatures: temperatures)
                             weatherConditions.append(weather)
                         }
                         
