@@ -47,7 +47,7 @@ In case you want to improve this app, feel free to create an issues or a Pull Re
 
 ### Build Notes
 
-To build this projec, just install the rquired pods by running the following command: 
+To build this project, just install the required pods by running the following command in the project directory: 
 
     pod install
 
