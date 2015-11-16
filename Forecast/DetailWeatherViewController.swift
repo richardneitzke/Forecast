@@ -53,12 +53,13 @@ class DetailWeatherViewController: UIViewController, BEMSimpleLineGraphDataSourc
     
     //Every temperature graph will have 24h
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
-        return 24
+        return 6
     }
     
     //Gives the graph the data of the WeatherCondition
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
-        return CGFloat(wCon!.temperatures[index])
+        
+        return CGFloat(wCon!.temperatures[index*4])
     }
 
     
