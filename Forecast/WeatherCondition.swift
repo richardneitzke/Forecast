@@ -27,9 +27,12 @@ class WeatherCondition {
     var windSpeed:String
     var windUnit:String
     var description:String
+    var temperatures:[Double]
     
     //Builds a WeatherCondition from certain API-Data
-    init(maxDegrees:Double,units:String,icon:String,time:String, minDegrees:Double, windSpeed:Double, precipitation:Double, currDeg:Double?, description:String) {
+    init(maxDegrees:Double,units:String,icon:String,time:String, minDegrees:Double, windSpeed:Double, precipitation:Double, currDeg:Double?, description:String, temperatures:[Double]) {
+        
+        self.temperatures = temperatures
         
         self.minDegrees = Int(minDegrees)
         self.maxDegrees = Int(maxDegrees)
