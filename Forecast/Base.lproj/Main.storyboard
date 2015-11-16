@@ -407,7 +407,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV3-aA-uMZ">
-                                <rect key="frame" x="30" y="64" width="540" height="289.5"/>
+                                <rect key="frame" x="30" y="54" width="540" height="289.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="200"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -554,7 +554,7 @@
                                 </variation>
                             </stackView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-Ph-qRH" customClass="BEMSimpleLineGraphView">
-                                <rect key="frame" x="20" y="353.5" width="560" height="130.5"/>
+                                <rect key="frame" x="20" y="343.5" width="560" height="140.5"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
@@ -615,7 +615,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="xWy-cp-PIB" secondAttribute="trailing" id="AUO-CI-Ypq"/>
                             <constraint firstItem="cdH-Ph-qRH" firstAttribute="top" secondItem="xV3-aA-uMZ" secondAttribute="bottom" id="CHN-bN-sCP"/>
-                            <constraint firstItem="xV3-aA-uMZ" firstAttribute="top" secondItem="aCM-xV-f8u" secondAttribute="bottom" id="F5i-QI-rF9"/>
+                            <constraint firstItem="xV3-aA-uMZ" firstAttribute="top" secondItem="aCM-xV-f8u" secondAttribute="bottom" constant="-10" id="F5i-QI-rF9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="egy-43-Kbc" secondAttribute="leading" constant="-10" id="HNi-P2-p6W"/>
                             <constraint firstItem="xWy-cp-PIB" firstAttribute="centerY" secondItem="8RC-l4-iU2" secondAttribute="centerY" id="KAm-ax-lrc"/>
                             <constraint firstItem="egy-43-Kbc" firstAttribute="centerY" secondItem="8RC-l4-iU2" secondAttribute="centerY" id="Lel-cp-ejE"/>
