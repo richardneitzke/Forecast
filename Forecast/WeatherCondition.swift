@@ -51,7 +51,7 @@ class WeatherCondition {
             self.windUnit = "mph"
         default:
             self.tempUnit = "°C"
-            self.windUnit = "km/h"
+            self.windUnit = "m/s"
         }
         
         switch icon {
