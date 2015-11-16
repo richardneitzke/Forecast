@@ -2,8 +2,7 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/platform-iOS-brightgreen.svg">
-<img src="https://img.shields.io/badge/deployment%20target-iOS%209-brightgreen.svg">
+<img src="https://img.shields.io/badge/OS-iOS%209-brightgreen.svg">
 <img src="https://img.shields.io/badge/language-Swift%202-brightgreen.svg">
 
 </div>
@@ -16,38 +15,42 @@
 <table align="center" border="0">
 
 <tr>
-<td> <img src="http://i.imgur.com/9X9XJQP.png"> </td>
-<td> <img src="http://i.imgur.com/uiC6biV.png"> </td>
+<td> <img src="http://fat.gfycat.com/MajesticAntiqueKagu.gif"> </td>
+<td> <img src="http://i.imgur.com/3L0Hqmw.jpg"> </td>
+<td> <img src="http://i.imgur.com/6kiNkQu.jpg"> </td>
 </tr>
 
-<tr> <td colspan="2" align="center">Symbols and background change with time and weather condition</td> </tr>
-
+<tr>
+<td> <img src="http://fat.gfycat.com/GaseousHilariousBeagle.gif"> </td>
+<td> <img src="http://i.imgur.com/xEZ8qtw.jpgf"> </td>
+<td> <img src="http://i.imgur.com/RRIsIGS.jpg"> </td>
+</tr>
 
 </table>
 
 ### Features
 
-* Accurate, location-based weather data by Forecast.io API
-* 5-day forecast
-* Dynamic background depending on current temperature
-* Clean UI
+- Clean & Simple UI
+- Accurate and detailed forecast data provided by forecast.io
+- 24h-forecast for the next 5 days
+- Rain & Wind data
 
 ### Used Resources
 
 Forecast uses the [forecast.io](https://forecast.io) API for weather data. The Tab Bar Icon is licensed under CC BY-ND 3.0 and provided by [icons8](http://icons8.com).  The weather icons are provided by [weathericons.io](http://weathericons.io).
 
+It also uses several pods, including Alamofire, SwiftyJSON, SwiftOverlays, AFBlurSegue and BEMSimpleLineGraph.
+
 ### Notes by Developer
 
 In case you want to improve this app, feel free to create an issues or a Pull Request.
-Right now, I use some bad practices (for example bad callback handling), I'll try to fix most of that in the next couple of days.
 
 ### Build Notes
 
-To build this project sucessfully, just install the rquired pods by running the following command: 
+To build this projec, just install the rquired pods by running the following command: 
 
     pod install
 
 
 ### License
 This project is licensed under the MIT License, see [here](https://opensource.org/licenses/MIT) for more information.
-
