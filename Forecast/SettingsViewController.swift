@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutViewController: UITableViewController {
+class SettingsViewController: UITableViewController {
     
     @IBAction func dismissPressed(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -16,22 +16,22 @@ class AboutViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if indexPath == NSIndexPath(forItem: 1, inSection: 0)
+        if indexPath == NSIndexPath(forItem: 1, inSection: 1)
         { UIApplication.sharedApplication().openURL(NSURL(string:"https://github.com/richardxyx")!) }
         
-        if indexPath == NSIndexPath(forItem: 0, inSection: 1)
+        if indexPath == NSIndexPath(forItem: 0, inSection: 2)
         { UIApplication.sharedApplication().openURL(NSURL(string:"http://forecast.io")!) }
         
-        if indexPath == NSIndexPath(forItem: 1, inSection: 1)
+        if indexPath == NSIndexPath(forItem: 1, inSection: 2)
         { UIApplication.sharedApplication().openURL(NSURL(string:"http://weathericons.io")!) }
     
-        if indexPath == NSIndexPath(forItem: 2, inSection: 1)
+        if indexPath == NSIndexPath(forItem: 2, inSection: 2)
         { UIApplication.sharedApplication().openURL(NSURL(string:"https://icons8.com")!) }
         
-        if indexPath == NSIndexPath(forItem: 0, inSection: 2)
+        if indexPath == NSIndexPath(forItem: 0, inSection: 3)
         { UIApplication.sharedApplication().openURL(NSURL(string:"https://github.com/kylebshr")!) }
         
-        if indexPath == NSIndexPath(forItem: 1, inSection: 2)
+        if indexPath == NSIndexPath(forItem: 1, inSection: 3)
         { UIApplication.sharedApplication().openURL(NSURL(string:"https://github.com/lapfelix")!) }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
