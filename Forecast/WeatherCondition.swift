@@ -48,7 +48,7 @@ class WeatherCondition {
         switch units {
         case "us":
             self.tempUnit = "°F"
-            self.windUnit = "mp/h"
+            self.windUnit = "mph"
         default:
             self.tempUnit = "°C"
             self.windUnit = "km/h"
