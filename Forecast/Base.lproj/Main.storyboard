@@ -394,10 +394,10 @@
             </objects>
             <point key="canvasLocation" x="1949" y="315"/>
         </scene>
-        <!--Weather on Weekday-->
+        <!--Detail Weather View Controller-->
         <scene sceneID="5Vh-Ft-wye">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="2x3-XS-osv" customClass="DetailWeatherViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="2x3-XS-osv" userLabel="Detail Weather View Controller" customClass="DetailWeatherViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aCM-xV-f8u"/>
                         <viewControllerLayoutGuide type="bottom" id="0hW-1U-RJf"/>
@@ -444,7 +444,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-JM-LrB" userLabel="Col 1">
-                                        <rect key="frame" x="162" y="0.0" width="75" height="90"/>
+                                        <rect key="frame" x="161.5" y="0.0" width="75" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-fn-bna">
                                                 <rect key="frame" x="25" y="0.0" width="24.5" height="67"/>
@@ -471,10 +471,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEZ-Nv-44I" userLabel="Col 2">
-                                        <rect key="frame" x="324" y="0.0" width="75" height="90"/>
+                                        <rect key="frame" x="323.5" y="0.0" width="75" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-IB-nn2">
-                                                <rect key="frame" x="8.5" y="-8.5" width="56.5" height="75.5"/>
+                                                <rect key="frame" x="9" y="-9" width="56.5" height="75.5"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="52"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -553,46 +553,83 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-Ph-qRH">
-                                <rect key="frame" x="20" y="361" width="560" height="125.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS-Chart to be implemented here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maw-Qe-MU4">
-                                        <rect key="frame" x="148" y="53" width="264" height="20.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdH-Ph-qRH" customClass="BEMSimpleLineGraphView">
+                                <rect key="frame" x="20" y="353.5" width="560" height="130.5"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="maw-Qe-MU4" firstAttribute="centerY" secondItem="cdH-Ph-qRH" secondAttribute="centerY" id="Cez-xG-BJZ"/>
-                                    <constraint firstItem="maw-Qe-MU4" firstAttribute="centerX" secondItem="cdH-Ph-qRH" secondAttribute="centerX" id="eCi-dS-UBS"/>
-                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="widthLine">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaBottom">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaTop">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="widthReferenceLines">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaLine">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorYaxisLabel">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2x3-XS-osv" id="Mhl-BO-ZJF"/>
+                                </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RC-l4-iU2">
+                                <rect key="frame" x="283.5" y="454" width="33.5" height="16"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="P7r-xi-RA1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egy-43-Kbc">
+                                <rect key="frame" x="30" y="454" width="28" height="16"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWy-cp-PIB">
+                                <rect key="frame" x="544.5" y="454" width="35.5" height="16"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <constraints>
-                            <constraint firstItem="cdH-Ph-qRH" firstAttribute="leading" secondItem="xV3-aA-uMZ" secondAttribute="trailing" constant="-550" id="AV3-9T-LGk"/>
-                            <constraint firstItem="cdH-Ph-qRH" firstAttribute="top" secondItem="xV3-aA-uMZ" secondAttribute="bottom" constant="8" id="CHN-bN-sCP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xWy-cp-PIB" secondAttribute="trailing" id="AUO-CI-Ypq"/>
+                            <constraint firstItem="cdH-Ph-qRH" firstAttribute="top" secondItem="xV3-aA-uMZ" secondAttribute="bottom" id="CHN-bN-sCP"/>
                             <constraint firstItem="xV3-aA-uMZ" firstAttribute="top" secondItem="aCM-xV-f8u" secondAttribute="bottom" id="F5i-QI-rF9"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="egy-43-Kbc" secondAttribute="leading" constant="-10" id="HNi-P2-p6W"/>
+                            <constraint firstItem="xWy-cp-PIB" firstAttribute="centerY" secondItem="8RC-l4-iU2" secondAttribute="centerY" id="KAm-ax-lrc"/>
+                            <constraint firstItem="egy-43-Kbc" firstAttribute="centerY" secondItem="8RC-l4-iU2" secondAttribute="centerY" id="Lel-cp-ejE"/>
                             <constraint firstItem="0hW-1U-RJf" firstAttribute="top" secondItem="4n3-O5-pGM" secondAttribute="bottom" constant="15" id="Nvr-m0-Vgu"/>
+                            <constraint firstItem="4n3-O5-pGM" firstAttribute="top" secondItem="8RC-l4-iU2" secondAttribute="bottom" constant="25" id="RQP-7p-qcw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xV3-aA-uMZ" secondAttribute="trailing" constant="10" id="S73-Cs-XO8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="cdH-Ph-qRH" secondAttribute="leading" id="V95-1T-dfM"/>
-                            <constraint firstItem="4n3-O5-pGM" firstAttribute="top" secondItem="cdH-Ph-qRH" secondAttribute="bottom" constant="8" id="Zbm-bx-l4S"/>
                             <constraint firstItem="4n3-O5-pGM" firstAttribute="leading" secondItem="wlb-GJ-pCR" secondAttribute="leadingMargin" id="a4H-B0-azD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4n3-O5-pGM" secondAttribute="trailing" id="bGW-L9-2jZ"/>
-                            <constraint firstItem="cdH-Ph-qRH" firstAttribute="leading" secondItem="4n3-O5-pGM" secondAttribute="trailing" constant="-560" id="dwl-KI-A4T"/>
+                            <constraint firstItem="8RC-l4-iU2" firstAttribute="centerX" secondItem="wlb-GJ-pCR" secondAttribute="centerX" id="jzh-vx-kZc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cdH-Ph-qRH" secondAttribute="trailing" id="kWP-WC-61g"/>
                             <constraint firstItem="xV3-aA-uMZ" firstAttribute="leading" secondItem="wlb-GJ-pCR" secondAttribute="leadingMargin" constant="10" id="n22-IT-KyI"/>
+                            <constraint firstItem="8RC-l4-iU2" firstAttribute="top" secondItem="cdH-Ph-qRH" secondAttribute="bottom" constant="-30" id="tNU-YU-s5B"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="AV3-9T-LGk"/>
-                                <exclude reference="dwl-KI-A4T"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outlet property="iconLabel" destination="xV3-aA-uMZ" id="wfD-GG-xKM"/>
                             <outlet property="maxDegreeLabel" destination="OiF-eP-T3t" id="Css-xY-T3B"/>
@@ -615,6 +652,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tempGraph" destination="cdH-Ph-qRH" id="L2q-GE-zoh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKk-2S-nql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,26 +7,20 @@
 //
 
 import UIKit
+import BEMSimpleLineGraph
 
-class DetailWeatherViewController: UIViewController {
+class DetailWeatherViewController: UIViewController, BEMSimpleLineGraphDataSource {
     
+    @IBOutlet weak var tempGraph: BEMSimpleLineGraphView!
     @IBAction func dismissPressed(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    var wCon:WeatherCondition?
+    
     override func viewDidLoad() {
         
         setNeedsStatusBarAppearanceUpdate()
-        
-        //Inserts Background Gradient
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        
-        let color1 = UIColor(red: 1, green: 1, blue: 1, alpha: 0).CGColor as CGColorRef
-        let color2 = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).CGColor as CGColorRef
-        gradientLayer.colors = [color1, color2]
-        
-        //self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
         
         //Makes Navigation Bar Transparent
         let bar:UINavigationBar! =  self.navigationController?.navigationBar
@@ -40,11 +34,21 @@ class DetailWeatherViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //Sets background color and title based on WeatherCondition
+        //Sets title based on WeatherCondition
         let wConView = self.view as! WeatherConditionView
-        let wCon = wConView.weatherCondition
+        wCon = wConView.weatherCondition
         self.title = "Weather on \(wCon!.fullDay)"
-        //wConView.backgroundColor = wCon!.color
+        
+        tempGraph.colorBackgroundYaxis = UIColor.clearColor()
     }
+    
+    func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
+        return 24
+    }
+    
+    func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
+        return CGFloat(wCon!.temperatures[index])
+    }
+
     
 }
