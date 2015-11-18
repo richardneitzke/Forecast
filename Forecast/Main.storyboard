@@ -36,7 +36,7 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="475"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG5-Ih-x6R">
-                                        <rect key="frame" x="169" y="33" width="221.5" height="289.5"/>
+                                        <rect key="frame" x="169" y="25" width="221.5" height="289.5"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="221.5" id="FCU-RU-1Vx"/>
@@ -46,8 +46,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
-                                        <rect key="frame" x="280" y="289.5" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-OA-hfc">
+                                        <rect key="frame" x="152" y="289.5" width="256" height="164"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="256" id="Fgc-oI-Ggz"/>
@@ -60,11 +60,17 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstItem="oG5-Ih-x6R" firstAttribute="top" secondItem="yLn-hb-23x" secondAttribute="top" constant="25" id="1ft-Tf-ya0"/>
                                     <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="CX8-fr-iFT"/>
                                     <constraint firstItem="oG5-Ih-x6R" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="-60" id="IJ5-Pz-9xF"/>
                                     <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerY" secondItem="yLn-hb-23x" secondAttribute="centerY" constant="134" id="TAZ-5m-gyg"/>
                                     <constraint firstItem="I1Z-OA-hfc" firstAttribute="centerX" secondItem="yLn-hb-23x" secondAttribute="centerX" id="n3V-nE-WmD"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IJ5-Pz-9xF"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="degreeLabel" destination="I1Z-OA-hfc" id="VZi-GL-ejy"/>
                                     <outlet property="iconLabel" destination="oG5-Ih-x6R" id="JXE-GO-EgN"/>
@@ -181,7 +187,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-Xw-epN" userLabel="Day3" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="248" y="0.0" width="65" height="110"/>
+                                        <rect key="frame" x="247.5" y="0.0" width="65" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cls-4Y-dkc" userLabel="ICN">
                                                 <rect key="frame" x="0.0" y="29" width="65" height="51"/>
@@ -234,7 +240,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-y8-mGx" userLabel="Day4" customClass="WeatherConditionView" customModule="Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="372" y="0.0" width="65" height="110"/>
+                                        <rect key="frame" x="371.5" y="0.0" width="65" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-N4-uPb" userLabel="ICN">
                                                 <rect key="frame" x="0.0" y="29" width="65" height="51"/>
@@ -406,7 +412,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV3-aA-uMZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xV3-aA-uMZ">
                                 <rect key="frame" x="30" y="54" width="540" height="289.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="200"/>
@@ -414,7 +420,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4n3-O5-pGM">
-                                <rect key="frame" x="20" y="495" width="560" height="90"/>
+                                <rect key="frame" x="20" y="495" width="555" height="90"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-jM-HZ6" userLabel="Col 3">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="90"/>
@@ -444,7 +450,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-JM-LrB" userLabel="Col 1">
-                                        <rect key="frame" x="162" y="0.0" width="75" height="90"/>
+                                        <rect key="frame" x="160" y="0.0" width="75" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-fn-bna">
                                                 <rect key="frame" x="25" y="0.0" width="24.5" height="67"/>
@@ -471,7 +477,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEZ-Nv-44I" userLabel="Col 2">
-                                        <rect key="frame" x="324" y="0.0" width="75" height="90"/>
+                                        <rect key="frame" x="320" y="0.0" width="75" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-IB-nn2">
                                                 <rect key="frame" x="9" y="-9" width="56.5" height="75.5"/>
@@ -504,7 +510,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beT-kc-FYa" userLabel="Col 4">
-                                        <rect key="frame" x="485" y="0.0" width="75" height="90"/>
+                                        <rect key="frame" x="480" y="0.0" width="75" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwW-wT-Gs2">
                                                 <rect key="frame" x="9" y="0.0" width="57.5" height="67"/>
@@ -624,7 +630,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xV3-aA-uMZ" secondAttribute="trailing" constant="10" id="S73-Cs-XO8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="cdH-Ph-qRH" secondAttribute="leading" id="V95-1T-dfM"/>
                             <constraint firstItem="4n3-O5-pGM" firstAttribute="leading" secondItem="wlb-GJ-pCR" secondAttribute="leadingMargin" id="a4H-B0-azD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4n3-O5-pGM" secondAttribute="trailing" id="bGW-L9-2jZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4n3-O5-pGM" secondAttribute="trailing" constant="5" id="bGW-L9-2jZ"/>
                             <constraint firstItem="8RC-l4-iU2" firstAttribute="centerX" secondItem="wlb-GJ-pCR" secondAttribute="centerX" id="jzh-vx-kZc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cdH-Ph-qRH" secondAttribute="trailing" id="kWP-WC-61g"/>
                             <constraint firstItem="xV3-aA-uMZ" firstAttribute="leading" secondItem="wlb-GJ-pCR" secondAttribute="leadingMargin" constant="10" id="n22-IT-KyI"/>
