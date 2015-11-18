@@ -59,7 +59,9 @@ class DetailWeatherViewController: UIViewController, BEMSimpleLineGraphDataSourc
     //Gives the graph the data of the WeatherCondition
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
         
-        return CGFloat(wCon!.temperatures[index*4])
+        if wCon!.temperatures[index*4] != Double.infinity {return CGFloat(wCon!.temperatures[index*4])} else {
+            return CGFloat(wCon!.maxDegrees)
+        }
     }
 
     
