@@ -34,10 +34,20 @@ class APIManager {
                 let lat = location!.coordinate.latitude
                 let lon = location!.coordinate.longitude
                 
+                //Looks up the user-preffered units
+                let defaults = NSUserDefaults.standardUserDefaults()
+                let unitValue = defaults.valueForKey("unit") as? String
+                var prefUnitSet = "auto"
+                switch unitValue {
+                case "us"?: prefUnitSet = "us"
+                case "si"?: prefUnitSet = "si"
+                default: defaults.setValue("auto", forKey: "unit")
+                }
+                
                 //Requesting Data from Server
                 //Register at developer.forecast.io for your own API-Key. Please don't use this key if you're using this code in your own project.
                 
-                Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)?extend=hourly").responseJSON(completionHandler: {response in
+                Alamofire.request(.GET, "https://api.forecast.io/forecast/12558c284449ff431b6f91235f6f669d/\(lat),\(lon)?extend=hourly&units=\(prefUnitSet)").responseJSON(completionHandler: {response in
                     
                     //Checking for successful Response
                     if response.result.value != nil {

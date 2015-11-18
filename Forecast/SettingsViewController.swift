@@ -14,6 +14,28 @@ class SettingsViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBOutlet weak var unitControl: UISegmentedControl!
+    
+    @IBAction func unitControl(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: defaults.setValue("us", forKey: "unit")
+        case 1: defaults.setValue("si", forKey: "unit")
+        default: defaults.setValue("auto", forKey: "unit")
+        }
+    }
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
+    override func viewWillAppear(animated: Bool) {
+        switch defaults.valueForKey("unit") as? String {
+        case "us"?: unitControl.selectedSegmentIndex = 0
+        case "si"?: unitControl.selectedSegmentIndex = 1
+        default:
+            defaults.setValue("", forKey: "unit")
+            unitControl.selectedSegmentIndex = 2
+        }
+    }
+    
     override func viewDidLoad() {
         
         //Makes Navigation Bar Transparent
