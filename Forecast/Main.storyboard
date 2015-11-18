@@ -366,7 +366,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eaA-4k-hso">
-                        <barButtonItem key="leftBarButtonItem" image="info_empty" id="4tm-K3-lma">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="4tm-K3-lma">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="oVd-ax-8iw" kind="custom" identifier="showSettings" customClass="AFBlurSegue" id="GHb-Hs-jxP"/>
@@ -1019,7 +1019,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info_empty" width="25" height="25"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.18431372549019609" green="0.66666666666666663" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
 </document>
