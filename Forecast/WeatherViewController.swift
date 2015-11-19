@@ -70,8 +70,10 @@ class WeatherViewController: UIViewController, UIGestureRecognizerDelegate {
         performSegueWithIdentifier("showDetail", sender: days[number].weatherCondition)
     }
     
-    //Sets the weatherCondition of the DetailWeatherViewController to the pressed one
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        //Sets the weatherCondition of the DetailWeatherViewController to the pressed one
         if segue.identifier == "showDetail" {
             
             let destinationNavController = segue.destinationViewController as! UINavigationController
@@ -79,6 +81,16 @@ class WeatherViewController: UIViewController, UIGestureRecognizerDelegate {
             let weatherView = detailWeatherViewController.view as! WeatherConditionView
             
             weatherView.weatherCondition = sender as? WeatherCondition
+            
+        }
+        
+        //Sets the SettingsViewControllers delegate to self
+        if segue.identifier == "showSettings" {
+            
+            let destinationNavController = segue.destinationViewController as! UINavigationController
+            let settingsViewController = destinationNavController.viewControllers.first as! SettingsViewController
+            
+            settingsViewController.delegate = self
             
         }
     }

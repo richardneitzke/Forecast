@@ -10,7 +10,11 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
+    var delegate: WeatherViewController?
+    var reloadRequired = false
+    
     @IBAction func dismissPressed(sender: UIBarButtonItem) {
+        if reloadRequired {delegate?.refresh()}
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -22,6 +26,8 @@ class SettingsViewController: UITableViewController {
         case 1: defaults.setValue("si", forKey: "unit")
         default: defaults.setValue("auto", forKey: "unit")
         }
+        
+        reloadRequired = true
     }
     
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -34,6 +40,8 @@ class SettingsViewController: UITableViewController {
             defaults.setValue("", forKey: "unit")
             unitControl.selectedSegmentIndex = 2
         }
+        
+        reloadRequired = false
     }
     
     override func viewDidLoad() {
