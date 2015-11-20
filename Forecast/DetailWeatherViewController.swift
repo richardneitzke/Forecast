@@ -29,13 +29,14 @@ class DetailWeatherViewController: UIViewController, BEMSimpleLineGraphDataSourc
         bar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         bar.barStyle = .BlackTranslucent
         
+        //Adds a GestureRecognizer for downward swipes that calls swipeDown()
         let swipeDownGestureRec = UISwipeGestureRecognizer(target: self, action: "swipeDown")
         swipeDownGestureRec.direction = .Down
-        
         self.view.addGestureRecognizer(swipeDownGestureRec)
         
     }
     
+    //Dismisses the ViewController
     func swipeDown() {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -51,12 +52,12 @@ class DetailWeatherViewController: UIViewController, BEMSimpleLineGraphDataSourc
         tempGraph.colorBackgroundYaxis = UIColor.clearColor()
     }
     
-    //Every temperature graph will have 24h
+    //Currently only showing 6 points because the graph looks too sloppy with more points
     func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
         return 6
     }
     
-    //Gives the graph the data of the WeatherCondition
+    //Puts the WeatherCondition data in the graph
     func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
         
         if wCon!.temperatures[index*4] != Double.infinity {return CGFloat(wCon!.temperatures[index*4])} else {

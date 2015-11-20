@@ -28,6 +28,7 @@ class WeatherViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         
+        //Puts all WeatherConditionViews in an array to make them accessible by loops easier
         days = [day0, day1, day2, day3, day4, day5]
         
         refresh()
