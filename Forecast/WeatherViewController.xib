@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="Forecast" customModuleProvider="target">
             <connections>
-                <outlet property="tempLabel" destination="VAY-4K-L2n" id="Jh1-fR-5QK"/>
+                <outlet property="tempLabel" destination="VAY-4K-L2n" id="Zwl-g1-v8h"/>
                 <outlet property="view" destination="4Q2-AU-Nh4" id="OP4-Em-IZE"/>
             </connections>
         </placeholder>
@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35°" textAlignment="center" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VAY-4K-L2n">
-                    <rect key="frame" x="15" y="0.0" width="570" height="220"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEG" textAlignment="center" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VAY-4K-L2n">
+                    <rect key="frame" x="40" y="0.0" width="520" height="220"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="2Hi-Ig-Q4v"/>
@@ -25,44 +25,13 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-kE-Hqf" customClass="BEMSimpleLineGraphView">
-                    <rect key="frame" x="0.0" y="350" width="600" height="250"/>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <accessibility key="accessibilityConfiguration">
-                        <accessibilityTraits key="traits" notEnabled="YES"/>
-                    </accessibility>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="250" id="XpM-EV-Y2g"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="colorBottom">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="colorTop">
-                            <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="NO"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="alphaLine">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="ReR-VG-b9j"/>
-                    </connections>
-                </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="mYy-kE-Hqf" secondAttribute="trailing" id="4Sw-62-oE6"/>
                 <constraint firstItem="VAY-4K-L2n" firstAttribute="top" secondItem="4Q2-AU-Nh4" secondAttribute="top" id="L9T-G5-q17"/>
-                <constraint firstItem="mYy-kE-Hqf" firstAttribute="leading" secondItem="4Q2-AU-Nh4" secondAttribute="leading" id="Ubm-b6-OhP"/>
-                <constraint firstAttribute="trailing" secondItem="VAY-4K-L2n" secondAttribute="trailing" constant="15" id="a7U-nf-ygy"/>
-                <constraint firstAttribute="bottom" secondItem="mYy-kE-Hqf" secondAttribute="bottom" id="ed7-xP-AAu"/>
-                <constraint firstItem="VAY-4K-L2n" firstAttribute="leading" secondItem="4Q2-AU-Nh4" secondAttribute="leading" constant="15" id="nti-jK-cHY"/>
+                <constraint firstAttribute="trailing" secondItem="VAY-4K-L2n" secondAttribute="trailing" constant="40" id="a7U-nf-ygy"/>
+                <constraint firstItem="VAY-4K-L2n" firstAttribute="leading" secondItem="4Q2-AU-Nh4" secondAttribute="leading" constant="40" id="nti-jK-cHY"/>
             </constraints>
             <point key="canvasLocation" x="387" y="245"/>
         </view>

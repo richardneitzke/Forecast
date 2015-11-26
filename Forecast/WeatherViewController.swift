@@ -8,30 +8,18 @@
 
 import Foundation
 import UIKit
-import BEMSimpleLineGraph
 
-class WeatherViewController: UIViewController, BEMSimpleLineGraphDataSource {
+class WeatherViewController: UIViewController {
     
-    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet var tempLabel: UILabel!
     
-    let tempUnit = "f"
-    let windUnit = "mph"
+    var tempUnit = "f"
     
-    var dailyConditionStorage: DailyCondition?
     var dailyCondition: DailyCondition? {
-        get { return dailyConditionStorage }
-        set {
-            tempLabel.text = "LOL"
-            dailyConditionStorage = newValue
-            
+        didSet {
+            tempLabel.text = "\(dailyCondition!.maxTemp(tempUnit))°"
         }
     }
     
-    func numberOfPointsInLineGraph(graph: BEMSimpleLineGraphView) -> Int {
-        return 3
-    }
     
-    func lineGraph(graph: BEMSimpleLineGraphView, valueForPointAtIndex index: Int) -> CGFloat {
-        return CGFloat(index)
-    }
 }

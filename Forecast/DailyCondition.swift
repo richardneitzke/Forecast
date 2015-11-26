@@ -17,6 +17,30 @@ class DailyCondition {
     func maxTemp(unit: String) -> Int { return json["temp_max_\(unit)"].intValue }
     func minTemp(unit: String) -> Int { return json["temp_min_\(unit)"].intValue }
     
+    var nextDayFirstTempC:Int?
+    var nextDayFirstTempF:Int?
+    
+    func nextDayFirstTemp(unit:String) -> Int? {
+        if unit == "c" { return nextDayFirstTempC } else if unit == "f" { return nextDayFirstTempF }
+        return nil
+    }
+    
+    var minTempWeekC = Int.max
+    var maxTempWeekC = Int.min
+    
+    var minTempWeekF = Int.max
+    var maxTempWeekF = Int.min
+    
+    func minTempWeek(unit:String) -> Int {
+        if unit == "c" { return minTempWeekC } else if unit == "f" { return minTempWeekF }
+        return Int.max
+    }
+    
+    func maxTempWeek(unit:String) -> Int {
+        if unit == "c" { return maxTempWeekC } else if unit == "f" { return maxTempWeekF }
+        return Int.max
+    }
+    
     func probabilityPercip() -> Int { return json["prob_precip_pct"].intValue }
     func totalPercip(unit: String) -> Int {return json["precip_total_\(unit)"].intValue }
     
@@ -70,6 +94,11 @@ class DailyCondition {
             times.append("\(hours):00")
             
             temperatures.append(json["Timeframes"][i]["temp_\(unit)"].intValue)
+        }
+        
+        if let nextDayFirstTemp = nextDayFirstTemp(unit) {
+            times.append("--:--")
+            temperatures.append(nextDayFirstTemp)
         }
         
         return (times, temperatures)
