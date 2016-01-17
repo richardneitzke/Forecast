@@ -1,3 +1,7 @@
+### Warning!
+This is an old project. It does contain a lot of bad code I wrote when I started out with iOS Development. I am not mantaining this project anymore and it is only here for historic reasons.
+<br/><br/><br/>
+
 <div align="center"><img src ="http://i.imgur.com/hn7YyWh.png?1" /> <br> <br> <h1>Forecast for iOS </h1> <h3> A small Swift Weather App </h3></div>
 
 <div align="center">
